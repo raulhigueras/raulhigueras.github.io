@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body {
+  font-family: helvetica;
+  margin:0px;
+}
+
+.card {
+  width: 58%;
+  height: 60%;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right:100px;
+  font-family: "Roboto Mono";
+  font-size: 35px;
+  margin: auto;
+}
+
+.card p {
+  margin-top: 0px;
+}
+
+#full1 {
+  background: linear-gradient(180deg, #8360C3 0%, rgba(255, 255, 255, 0) 100%), #2EBF91;
+}
+
+#full2 {
+  background: linear-gradient(180deg, #2EBF91 0%, rgba(255, 255, 255, 0) 100%), #FF8C00;
+}
+
+#full3 {
+  background: linear-gradient(180deg, #FF8C00 0%, rgba(255, 255, 255, 0) 100%), #FFF493;
+}
+
+#full4 {
+  background: linear-gradient(180deg, #FFF493 0%, rgba(255, 255, 255, 0) 100%), #72AFB6;
+}
+
+#arrow {
+  border: 25px solid;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  width:0px;
+  height:0px;
+  border-radius: 5px;
+  margin: auto;
+  animation-name: movingArrow;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
+
+@keyframes movingArrow {
+  0% {transform: translateY(0)}
+  50% {transform: translateY(15px)}
+  100% {transform: translateY(0)}
+}
+
+li {
+  list-style: none;
+}
+
+li::before {
+  content: ">";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.icon-show {
+  display:flex;
+  align-content: bottom;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 95%;
+    height: 45%;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  #arrow {
+    border-width: 10px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    width: 85%;
+    height: 45%;
+    padding: 25px;
+    font-size: 25px;
+  }
+
+  #arrow {
+    border-width: 10px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+}
