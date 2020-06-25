@@ -1,0 +1,123 @@
+:root {
+  --black-bg: #121212;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+.light {
+  --bg-color: var(--white);
+  --font-color: var(--black)
+}
+
+.dark {
+  --bg-color: var(--black-bg);
+  --font-color: var(--white);
+}
+
+body {
+  padding:0px;
+  margin:0px;
+}
+
+#body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  
+  width: 100vw;
+  min-height: 100vh;
+  
+  display:flex;
+  flex-direction: column;
+  font-family: "Nunito", "Open Sans", sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 60px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-weight: 1;
+  font-size: 48px;
+}
+
+h2{
+  font-weight: 1;
+  font-size: 24px;
+}
+
+h3{
+  font-size: 21px;
+}
+
+a{
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+aside {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+section {
+  width: 250px;
+  margin-bottom:20px;
+}
+
+section h3 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #666666;
+}
+
+section ul {
+  list-style: none;
+}
+
+section ul li{
+  margin-bottom: 10px;
+}
+
+.spotify-btn {
+  width: 100%;
+}
+
+@keyframes appear {
+  from: { transform: translateX(-10px); }
+  to:   { transform: translateX(0px); }
+}
+
+#lamp {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -60px;
+  transform: translateX(60px);
+  transition: transform 0.3s linear;
+  transition-delay: 2s;
+}
+
+#lamp:hover {
+  cursor: pointer;
+}
+
+img {
+  margin-bottom: -1%;
+}
+
+footer {
+  align-self: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}

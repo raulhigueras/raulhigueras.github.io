@@ -5,62 +5,44 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="fullpage.css">
-    <script src="fullpage.js"></script>
-
-    <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-
-    <div id="fullpage">
-
-      <div class="section full" id="full1">
-        <div class="card" >
-          <p>Hey! 👋</p>
-          <p> I’m Raúl, a data science student from Barcelona. </p>
-          <p> I love programming and design </p>
-          <div id="arrow" onclick="location.href = '#b'"></div>
-        </div>
+    <link rel="stylesheet" href="/styles.css">
+    
+  </head>  
+  <body class="dark">
+    <div id="body">
+      <main>
+        <h1 align="center"> Hi, I'm Raúl <img src="https://img.icons8.com/color/48/000000/metal-music.png"/></h1>
+        <h2 align="center"> Data Science student from Barcelona  <img src="https://img.icons8.com/color/48/000000/laptop--v1.png" width="24px"/><img src="https://img.icons8.com/color/48/000000/test-tube.png" width="24px"/></h2>
+      </main>
+      <aside>
+          <section>
+            <h3> <img src="https://img.icons8.com/color/48/000000/light.png" height="20px"/> Stuff I've made </h3>
+            <ul>
+              <li><a href="https://assistant.google.com/services/a/uid/00000079f911ee21"> Guitar tabs </a></li>
+              <li><a href="https://www.figma.com/community/plugin/754622689958838972"> Latex Editor (Figma plugin) </a></li>
+              <!-- <li><a href="#"> Notion IFTTT Button <img src="https://img.icons8.com/color/48/000000/under-construction.png" height="20px"/></a></li> -->
+            </ul>
+          </section>
+          <section>
+            <h3> <img src="https://img.icons8.com/color/48/000000/music-record--v1.png" height="20px"/> Listening now </h3>
+            <iframe class="spotify-btn" src="https://open.spotify.com/embed/album/2syYOIreIf8ma4y1Py9QAe" width="250px" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          </section>
+          <section>
+            <h3> <img src="https://img.icons8.com/color/48/000000/so-so.png" height="20px"/> Contact me </h3>
+            <ul>
+              <li><a href="https://twitter.com/raul_higueras7"> Twitter </a></li>
+              <li><a href="https://github.com/raulhigueras"> Github </a></li>
+              <li><a href="#"> Linkedin </a></li>
+            </ul>
+          </section>
+        </aside>
+        <footer>
+          Site designed by me :D. Icons by <b><a href="https://icons8.com/"> Icons8 </a></b>
+        </footer>
       </div>
-
-      <div class="section full" id="full2">
-        <div class="card" >
-          <p>  Check out some of the projects I've worked on 💻 </p>
-          <ul>
-            <li> <a target="_blank" href="https://assistant.google.com/services/a/uid/00000079f911ee21?hl=en-US">Music Tabs (Google Action)</a> </li>
-            <li> <a target="_blank" href="https://www.figma.com/c/plugin/754622689958838972" >Latex Editor (plugin for Figma)</a> </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section full" id="full3">
-        <div class="card" >
-          <p>  I’m also learning graphic design. Here's a list of things I made 🎨 </p>
-          <ul>
-            <li> <a target="_blank" href="http://ideaycrea.com"> Idea&Crea webpage </a></li>
-            <li> <a target="_blank" href="https://harmless-cantaloupe.glitch.me/"> PoetBot UI design </a> </li>
-            <li> This webpage :D </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section full" id="full4">
-        <div class="card" >
-          <p>  Feel free to contact me 💬 </p>
-          <br />
-          <div class="icon-show">
-            <a target="_blank" href="https://github.com/raulhigueras"><img class="icon" src="https://image.flaticon.com/icons/svg/25/25231.svg" /></a>
-            <a target="_blank" href="mailto:raulhigueras00@gmail.com"><img class="icon" src="https://image.flaticon.com/icons/svg/25/25236.svg" /></a>
-            <a target="_blank" href="https://twitter.com/raul_higueras7"><img class="icon" src="https://image.flaticon.com/icons/svg/25/25660.svg" /></a>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    
+    <img id="lamp" src="https://img.icons8.com/color/96/000000/lights.png" width="60"/>
+  
+    <script src="scripts.js"></script>
   </body>
 </html>
