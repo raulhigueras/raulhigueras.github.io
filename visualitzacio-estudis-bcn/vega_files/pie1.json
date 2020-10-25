@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple pie chart with embedded data.",
+  "data": {
+    "values": [
+      {"Nivell acadèmic": "No consta", "value": 23439, "order":1},
+      {"Nivell acadèmic": "Sense estudis", "value": 29301, "order":2},
+      {"Nivell acadèmic": "ESO", "value": 317054, "order": 4},
+      {"Nivell acadèmic": "Batxillerat", "value": 364046, "order": 5},
+      {"Nivell acadèmic": "Primària", "value": 230003, "order": 3},
+      {"Nivell acadèmic": "Universitat", "value": 483911, "order": 6}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {"field": "Nivell acadèmic", "type": "nominal", "sort": {"field":"order"},
+    "scale":{"range":["#003f5c", "#444e86", "#955196", "#dd5182", "#ff6e54", "#ffa600"]}},
+    "tooltip":[
+      {"type": "nominal", "field": "Nivell acadèmic", "title": "Nivell"},
+      {
+        "type": "quantitative",
+        "field": "value",
+        "title": "Nº persones"
+      }],
+    "order": {
+      "field": "order"
+    }
+  },
+  "view": {"stroke": null}
+}
