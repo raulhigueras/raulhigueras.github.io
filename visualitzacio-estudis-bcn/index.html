@@ -7,54 +7,54 @@
 
     <title>Nivell Educatiu Barcelona</title>
     <link rel="shortcut icon" href="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fbirrete.png?v=1603619806156">
-    
+
     <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-    
+
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="style.css">
+
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-    
+    <script src="script.js" defer></script>
+
     <!-- import the font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  </head>  
+  </head>
   <body>
     <h1>Nivell Educatiu de la Població de Barcelona</h1>
     <section class="two-cols">
-      
+
       <div style="width:100%; display:flex; flex-direction: column; align-items:flex-end; justify-content: space-around;">
         <p class="map-aside"> % de població sense els estudis mínims obligatoris per barris → </p>
         <p align="center" > Distribució de la població +16 segons el seu nivell educatiu màxim </p>
         <div id="bar-chart-map"></div>
       </div>
-      
+
       <div class="map-container elevado">
         <div>
           <div id="map1" class="big-map"></div>
           <div style="text-align: center;"> Fes clic a un barri al mapa per obtenir informació més detallada </div>
         </div>
-        
+
         <div id="map1_legend"></div>
         <!-- Percentatge de població que no té els estudis obligatoris per barris de la ciutat. -->
       </div>
 
     </section>
-    
-    
-    
+
+
+
     <hr />
-    
-    
-    
+
+
+
     <h2> Percentatges de població +16 a la ciutat </h2>
     <section class="row">
       <div>
@@ -78,13 +78,13 @@
         <p class="c"> Estudis Universitaris /CFGS </p>
       </div>
     </section>
-    
-    
-    
+
+
+
     <hr />
-    
-    
-    
+
+
+
     <h2> Evolució del % de persones +16 segons estudis màxims en els últims 11 anys </h2>
     <section class="two-cols-60-40">
       <div id="plot1">
@@ -105,13 +105,13 @@
         </ul>
       </div>
     </section>
-    
-    
-    
+
+
+
     <hr />
-    
-    
-    
+
+
+
     <h2> Relació entre els nivells educatius i la renda per barri </h2>
     <p class="expl">
       Els gràfics mostren els barris segons la renda familiar disponible (en unitats relatives) i la quantitat de persones amb estudis màxims per categories (Dades del 2017). Fes clic sobre la llegenda per filtar per districtes o fes zoom ↓.
@@ -123,13 +123,13 @@
         Els veïns dels barris amb la renda més baixa tenen <b>10 vegades</b> menys probabilitats d'obtenir títol universitari o de CFGS que els dels barris amb rendes més altes
       </div>
     </section>
-    
-    
-    
+
+
+
     <hr />
-    
-    
-    
+
+
+
     <h2> Diferències entre sexes per nivell educatiu </h2>
     <p class="expl">
       Diferència entre el nombre de dones i homes amb estudis màxims per categoria. <span style="color: #520E5E; font-weight: 500">El color lila indica majoria de dones</span> i <span style="color:#14672E; font-weight: 500">el color verd majoria d'homes.</span> ↓
@@ -146,19 +146,19 @@
       <div>
         <div id="map-sexe-3" class="medium-map"></div>
         <p class="map-subtitle"> ESO </p>
-      </div> 
+      </div>
       <div id="map-sexe-3_legend"></div>
     </section>
     <div class="obs">
       A Barcelona, hi ha <b>48107</b> dones més que homes amb estudis universitaris O CFGS
     </div>
-    
-    
-    
+
+
+
     <hr id="translate-section"/>
-    
-    
-    
+
+
+
     <section class="row">
       <div class="info">
         Totes les dades utilitzades en aquesta visualització han estat obtingudes del portal OpenDataBcn:
@@ -168,18 +168,18 @@
           <li><a target="_blank" href="https://opendata-ajuntament.barcelona.cat/data/ca/dataset/est-padro-nivell-academic-sexe">Població de la ciutat de Barcelona segons sexe i nivell acadèmic</a></li>
         </ul>
       </div>
-      
+
     </section>
-    
+
     <!-- <a style="color: black; text-decoration: none;" href="#translate-section"><div id="translate-msg"> Idiomas / Languages </div></a>
-    
+
     <section class="one-col">
       <b> Canviar idioma: </b>
       <div id="google_translate_element"></div>
     </section>-->
-    
+
     <hr />
-    
+
     <h2> Autors: </h2>
     <section class="row">
       <div class="profile">
@@ -196,9 +196,9 @@
       </div>
     </section>
 
-    
+
     <hr />
-    
+
 
   </body>
 </html>
