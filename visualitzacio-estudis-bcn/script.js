@@ -20,20 +20,20 @@ function main() {
   const nEvoPlots = 10;
   const nDfs = 1;
   const nPiePlots = 1;
-  
+
   evoPlots = new Array(nEvoPlots).fill(undefined).map((val,idx) => `evo${idx+1}.json`);
   evoPlots = evoPlots.map( x => fetch(`${folder}/${x}`) );
-  
+
   let dfs = ["https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fno_ed_oblig.csv?v=1603625903435", "https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fsexe_uni.csv?v=1603530553975", "https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fsexe_csup.csv?v=1603530561711", "https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fsexe_eso.csv?v=1603531330227"];
   dfs = dfs.map( x => d3.csv(x) );
-  
+
   var viz1 = fetch('vega_files/renda.json');
-  
+
   bcn_map = d3.json("https://raw.githubusercontent.com/martgnz/bcn-geodata/master/barris/barris.geojson");
-  
+
   let piePlots = new Array(1).fill(undefined).map((val,idx) => `pie${idx+1}.json`);
   piePlots = piePlots.map( x => fetch(`${folder}/${x}`) );
-  
+
   //Promise.all([evo1, df1, viz1, bcn_map, pie1]).then(res => {
   Promise.all([bcn_map, viz1, ...evoPlots, ...dfs, ...piePlots]).then( res => {
     console.log(res.length)
@@ -50,11 +50,11 @@ function main() {
     drawMap('#map-sexe-1', res[2+nEvoPlots+1], 'diff', false, 1)
     drawMap('#map-sexe-2', res[2+nEvoPlots+2], 'diff', false, 1)
     drawMap('#map-sexe-3', res[2+nEvoPlots+3], 'diff', true, 1)
-    
+
 
     //res[2+nDfs+nEvoPlots].json().then( r => vegaEmbed('#pie-chart-map', r) )
   });
-  
+
   let bar_charts = fetch('vega_files/bar_charts.json').then(res => {
     res.json().then( r =>{
       barCharts = r;
@@ -81,13 +81,13 @@ function changeBarChart(i) {
 //
 
 function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
-  
+
   var w = 700;
   var h = 700;
   var v = `${variable}-${div_id}`;
-  
+
   data = Object.values(data).slice(0,73)
-  
+
   var svgMap = d3.select(div_id).append("svg").attr("preserveAspectRatio", "xMinYMin meet")
               .attr("viewBox", "0 0 " + w + " " + h)
               .classed("svg-content", true);
@@ -120,10 +120,10 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
   var color;
   if (color_palette == 0)  color = d3.scaleSequential(d3.interpolateReds).domain([0,Math.max(...values)]);//color = d3.scaleLinear().domain([0,Math.max(...values)]).interpolate(d3.interpolateHcl).range([ d3.hcl('#E0EEF5'), d3.hcl('#184C8C')]);
   else                     color = d3.scaleSequential(d3.interpolatePRGn).domain([2000,-2000]);
-  //var 
+  //var
   // color = d3.scaleSequential(d3.interpolateBlues).domain([0,Math.max(...values)]);
-  
-  
+
+
 
   // COLOR LEGEND
   if (color_legend) continuous(`${div_id}_legend`, color)
@@ -134,7 +134,7 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
     //console.log(f.properties['BARRI'])
     f.properties[v] = Math.round(values[i]*100)/100;
   })
-  
+
   svgMap.selectAll("path")
      .data(bcn_map.features)
      .enter()
@@ -148,8 +148,8 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
     console.log(d)
        changeBarChart(parseInt(d.properties['BARRI'])-1)
      });
-     
-  
+
+
   svgMap.selectAll("path")
     .transition()
     .delay(function(d, i) { return i*8 })
@@ -161,7 +161,7 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
 // create continuous color legend
 function continuous(selector_id, colorscale) {
   document.querySelector(selector_id).innerHTML = "";
-  
+
   var legendheight = 200,
       legendwidth = 80,
       margin = {top: 10, right: 60, bottom: 10, left: 2};
@@ -239,4 +239,17 @@ window.mobileCheck = function() {
 
 if (window.mobileCheck()) {
   alert("Aquesta visualització no està optimitzada per telèfons mòbils. Per una bona experiència, obre l'enllaç des del navegador d'un ordinador :).")
+}
+
+/* Sample function that returns boolean in case the browser is Internet Explorer*/
+function isIE() {
+  ua = navigator.userAgent;
+  /* MSIE used to detect old browsers and Trident used to newer ones*/
+  var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+  return is_ie;
+}
+
+if (isIE()){
+  alert("Es possible que la visualització no funcioni correctament amb el navegador Internet Explorer. Per una bona experiència, recomenem utilitzar un navegador modern com Google Chrome, Safari, Firefox o Microsoft Edge")
 }

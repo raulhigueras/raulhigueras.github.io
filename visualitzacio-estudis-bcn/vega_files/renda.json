@@ -16,14 +16,15 @@
               "condition": {
                 "type": "nominal",
                 "field": "Nom_Districte",
-                "selection": {"or": ["selector013", "selector014"]}
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": "lightgray"
             },
             "opacity": {
               "condition": {
                 "value": 0.8,
-                "selection": {"or": ["selector013", "selector014"]}
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": 0.2
             },
@@ -48,13 +49,13 @@
           },
           "height": 200,
           "selection": {
-            "selector013": {
+            "selector019": {
               "type": "multi",
               "fields": ["Nom_Districte"],
               "bind": "legend"
             },
-            "selector014": {"type": "multi", "fields": ["Nom_Districte"]},
-            "selector015": {
+            "selector020": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector021": {
               "type": "interval",
               "bind": "scales",
               "encodings": ["x", "y"]
@@ -73,14 +74,15 @@
               "condition": {
                 "type": "nominal",
                 "field": "Nom_Districte",
-                "selection": {"or": ["selector013", "selector014"]}
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": "lightgray"
             },
             "opacity": {
               "condition": {
                 "value": 0.8,
-                "selection": {"or": ["selector013", "selector014"]}
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": 0.2
             },
@@ -105,13 +107,13 @@
           },
           "height": 200,
           "selection": {
-            "selector013": {
+            "selector019": {
               "type": "multi",
               "fields": ["Nom_Districte"],
               "bind": "legend"
             },
-            "selector014": {"type": "multi", "fields": ["Nom_Districte"]},
-            "selector015": {
+            "selector020": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector021": {
               "type": "interval",
               "bind": "scales",
               "encodings": ["x", "y"]
@@ -132,14 +134,15 @@
               "condition": {
                 "type": "nominal",
                 "field": "Nom_Districte",
-                "selection": {"or": ["selector013", "selector014"]}
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": "lightgray"
             },
             "opacity": {
               "condition": {
                 "value": 0.8,
-                "selection": {"or": ["selector013", "selector014"]}
+                "selection": {"or": ["selector019", "selector020"]}
               },
               "value": 0.2
             },
@@ -164,13 +167,13 @@
           },
           "height": 200,
           "selection": {
-            "selector013": {
+            "selector019": {
               "type": "multi",
               "fields": ["Nom_Districte"],
               "bind": "legend"
             },
-            "selector014": {"type": "multi", "fields": ["Nom_Districte"]},
-            "selector015": {
+            "selector020": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector021": {
               "type": "interval",
               "bind": "scales",
               "encodings": ["x", "y"]
@@ -191,14 +194,15 @@
                   "condition": {
                     "type": "nominal",
                     "field": "Nom_Districte",
-                    "selection": {"or": ["selector013", "selector014"]}
+                    "legend": {"title": "Nom Districte"},
+                    "selection": {"or": ["selector019", "selector020"]}
                   },
                   "value": "lightgray"
                 },
                 "opacity": {
                   "condition": {
                     "value": 0.8,
-                    "selection": {"or": ["selector013", "selector014"]}
+                    "selection": {"or": ["selector019", "selector020"]}
                   },
                   "value": 0.2
                 },
@@ -227,13 +231,13 @@
               },
               "height": 200,
               "selection": {
-                "selector013": {
+                "selector019": {
                   "type": "multi",
                   "fields": ["Nom_Districte"],
                   "bind": "legend"
                 },
-                "selector014": {"type": "multi", "fields": ["Nom_Districte"]},
-                "selector015": {
+                "selector020": {"type": "multi", "fields": ["Nom_Districte"]},
+                "selector021": {
                   "type": "interval",
                   "bind": "scales",
                   "encodings": ["x", "y"]
@@ -252,14 +256,15 @@
                   "condition": {
                     "type": "nominal",
                     "field": "Nom_Districte",
-                    "selection": {"or": ["selector013", "selector014"]}
+                    "legend": {"title": "Nom Districte"},
+                    "selection": {"or": ["selector019", "selector020"]}
                   },
                   "value": "lightgray"
                 },
                 "opacity": {
                   "condition": {
                     "value": 0.8,
-                    "selection": {"or": ["selector013", "selector014"]}
+                    "selection": {"or": ["selector019", "selector020"]}
                   },
                   "value": 0.2
                 },
@@ -288,13 +293,13 @@
               },
               "height": 200,
               "selection": {
-                "selector013": {
+                "selector019": {
                   "type": "multi",
                   "fields": ["Nom_Districte"],
                   "bind": "legend"
                 },
-                "selector014": {"type": "multi", "fields": ["Nom_Districte"]},
-                "selector015": {
+                "selector020": {"type": "multi", "fields": ["Nom_Districte"]},
+                "selector021": {
                   "type": "interval",
                   "bind": "scales",
                   "encodings": ["x", "y"]
