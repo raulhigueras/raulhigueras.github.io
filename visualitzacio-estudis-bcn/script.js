@@ -103,6 +103,12 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
               .attr('class', 'd3-tip')
               .offset([-5, 0])
               .html(function(d) {
+
+                if (variable == "diff") {
+                  if (d.properties[v] > 0) return `${d.properties.NOM} : ${d.properties[v]} dones +`;
+                  else return `${d.properties.NOM} : ${-d.properties[v]} homes +`;
+                }
+
                 if (color_palette == 0) return `${d.properties.NOM} : ${d.properties[v]} %`;
                 else                    return `${d.properties.NOM} : ${d.properties[v]}`;
               })
@@ -119,7 +125,7 @@ function drawMap(div_id, data, variable, color_legend=true, color_palette=0) {
   //var color = d3.scaleSequential(d3.interpolatePlasma).domain([0,Math.max(...values)]);
   var color;
   if (color_palette == 0)  color = d3.scaleSequential(d3.interpolateReds).domain([0,Math.max(...values)]);//color = d3.scaleLinear().domain([0,Math.max(...values)]).interpolate(d3.interpolateHcl).range([ d3.hcl('#E0EEF5'), d3.hcl('#184C8C')]);
-  else                     color = d3.scaleSequential(d3.interpolatePRGn).domain([2000,-2000]);
+  else                     color = d3.scaleSequential(d3.interpolatePRGn).domain([3000,-3000]);
   //var
   // color = d3.scaleSequential(d3.interpolateBlues).domain([0,Math.max(...values)]);
 
@@ -210,6 +216,7 @@ function continuous(selector_id, colorscale) {
   var legendaxis = d3.axisRight()
     .scale(legendscale)
     .tickSize(6)
+    .tickFormat(Math.abs)
     .ticks(8);
 
   var svg = d3.select(selector_id)
