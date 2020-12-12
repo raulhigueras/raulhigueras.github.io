@@ -1,0 +1,233 @@
+/* CSS files add styling rules to your content */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 2em;
+  width: 70vw;
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100vw;
+  }
+}
+
+h1 {
+  font-size: 70px;
+  font-weight: normal
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
+
+hr {
+  margin: 100px;
+}
+
+
+section {
+  width: 100%;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.two-cols-60-40 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.two-cols-60-40 div:first-child {
+  text-align: right;
+}
+
+.one-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.row svg {
+  width: 200px;
+}
+
+.elevado {
+  margin-top: -110px;
+}
+
+
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 100%;
+}
+
+
+.map-container {
+  display: flex;
+}
+
+.big-map {
+  min-width: 600px;
+}
+
+.medium-map {
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.medium-map svg {
+  width:100%;
+  height:100%;
+}
+
+.continent:hover {
+  cursor: pointer;
+  stroke: black;
+  stroke-location: inside;
+  stroke-width: 1px;
+}
+
+.continent-selected {
+  stroke: black;
+  stroke-width: 1px;
+  z-index: 1000;
+}
+
+
+
+/* Text decorations */
+
+p.map-aside {
+  text-align:right;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+p.map-subtitle {
+  text-align: center;
+}
+
+.c {
+  text-align: center;
+}
+
+.cb { /* Center bold */
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+
+.c1 { color: #58508d }
+.c2 { color: #dd5182 }
+.c3 { color: #ff6e54 }
+.c4 { color: #ffa600 }
+
+
+.obs {
+  margin-top:15px;
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 1px #0c5460;
+  color: #0c5460;
+  background-color: #D1ECF1;
+  font-size: 20px;
+}
+
+.obs::before{
+  content: "👀"
+}
+
+.info {
+  border-radius: 10px;
+  border: solid 1px black;
+  background-color: #EEEEEE;
+  font-size: 20px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.info::before {
+  content: "📚"
+}
+
+.expl {
+  font-size: 18px;
+}
+
+
+
+
+/* Tooltip */
+
+.d3-tip{
+  padding: 10px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+
+
+
+/* Lists */
+
+.button-list li {
+  display: block;
+  list-style: none;
+  padding: 5px;
+}
+
+.button-list li:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* Specific charts */
+#map1 {
+  justify-self: right;
+}
+
+
+
+/* Translation */
+#translate-msg {
+  position: absolute;
+  top: -10px;
+  right: -13vw;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#translate-msg:hover{
+  cursor: pointer;
+}
+
+#translate-msg::before{
+  content:"🗺️"
+}

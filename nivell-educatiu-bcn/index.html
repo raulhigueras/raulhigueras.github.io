@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Nivell Educatiu Barcelona</title>
+    <link rel="shortcut icon" href="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fbirrete.png?v=1603619806156">
+    
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    
+    <!-- import the font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  </head>  
+  <body>
+    <h1>Nivell Educatiu de la Població de Barcelona</h1>
+    <section class="two-cols">
+      
+      <div style="width:100%; display:flex; flex-direction: column; align-items:flex-end; justify-content: space-around;">
+        <p class="map-aside inv"> % de població sense els estudis mínims obligatoris (ESO) per barris → </p>
+        <p align="center" class="inv" > Distribució de la població +16 segons el seu nivell educatiu màxim 
+          (La línea marca els percentatges mitjans de tota Barcelona)
+        </p>
+        <div id="bar-chart-map"></div>
+      </div>
+      
+      <div class="map-container elevado">
+        <div>
+          <div id="map1" class="big-map"></div>
+          <div style="text-align: center;" class="inv"> Fes clic en un barri al mapa per obtenir informació més detallada </div>
+        </div>
+        
+        <div id="map1_legend"></div>
+        <!-- Percentatge de població que no té els estudis obligatoris per barris de la ciutat. -->
+      </div>
+
+      
+    </section>
+    
+    <br /><br />
+    <div>
+        → <b>ESO:</b> Educació Secundària Obligatòria
+      <br />
+        → <b>CFGM:</b> Cicle Formatiu Grau Mitjà
+      <br />
+        → <b>CFGS:</b> Cicle Formatiu Grau Superior
+      </div>
+    
+    <hr />
+    
+    
+    
+    <h2> Percentatges de població +16 segons estudis superats </h2>
+    <section class="row">
+      <div>
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_primaria%20(2).svg?v=1607801821238"><br />
+        <span class="c1 cb">96%</span>
+        <p class="c"> Estudis primaris </p>
+      </div>
+      <div>
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_eso.svg?v=1603209543921"><br />
+        <span class="c2 cb">80%</span>
+        <p class="c"> ESO </p>
+      </div>
+      <div>
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_bachi.svg?v=1603632292776"><br >
+        <span class="c3 cb">58%</span>
+        <p class="c"> Batxillerat / CFGM </p>
+      </div>
+      <div>
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_uni.svg?v=1603209546172"><br />
+        <span class="c4 cb">33%</span>
+        <p class="c"> Estudis Universitaris /CFGS </p>
+      </div>
+    </section>
+    
+    
+    
+    <hr />
+    
+    
+    
+    <h2> Evolució del % de persones +16 segons nivell d'estudis </h2>
+      <p class="expl">
+        Fes clic a sobre de cada districte per veure la seva evolució
+      </p>
+    <section class="two-cols-60-40">
+      <div id="plot1">
+        []
+      </div>
+      <div>
+        <ul class="button-list">
+          <li onclick="changeEvoPlot(0)">Ciutat Vella</li>
+          <li onclick="changeEvoPlot(1)">L'Eixample</li>
+          <li onclick="changeEvoPlot(2)">Gràcia</li>
+          <li onclick="changeEvoPlot(3)">Horta-Guinardó</li>
+          <li onclick="changeEvoPlot(4)">Les Corts</li>
+          <li onclick="changeEvoPlot(5)">Nou Barris</li>
+          <li onclick="changeEvoPlot(6)">Sant Andreu</li>
+          <li onclick="changeEvoPlot(7)">Sant Martí</li>
+          <li onclick="changeEvoPlot(8)">Sants Montjuïc</li>
+          <li onclick="changeEvoPlot(9)">Sarrià-Sant Gervasi</li>
+        </ul>
+      </div>
+    </section>
+    
+    
+    
+    <hr />
+    
+    
+    
+    <h2> Relació entre els nivells educatius i la renda per barri </h2>
+    <p class="expl">
+      Els gràfics mostren els barris segons l'índex de renda familiar disponible* i la quantitat de persones amb estudis màxims per categories (Dades del 2017). Fes clic sobre la llegenda per filtrar per districtes o fes zoom.
+    </p>
+    <section class="one-col">
+      <div id="plot2">
+      </div>
+      <div class="obs">
+        Els barris amb la renda més baixa tenen <b>10 vegades</b> menys població amb títol universitari o CFGS que els barris amb rendes més altes
+      </div><br /><br />
+      <div>
+        *<b>Índex renda familiar disponible:</b> renda de la que disposen les famílies després de retirar els diners dedicats a impostos. Els valors indiquen la posició relativa de cada barri en relació amb la mitja de Barcelona, fixada en un valor igual a 100.
+      </div>
+    </section>
+    
+    
+    
+    <hr />
+    
+    
+    
+    <h2> Diferències entre sexes per nivell educatiu </h2>
+    <p class="expl">
+      De la població a cada categoria, el percentatge de dones. <span style="padding-left: 4px; padding-right: 4px; background-color: #DFCBE3; color:#763283; font-weight: 500"> El color lila indica majoria de dones</span> i <span style="padding-left: 4px; padding-right: 4px; background-color: #C5E7BF; color:#1F7638; font-weight: 500">el color verd indica majoria d'homes.</span> 
+    </p>
+    <section class="row">
+      <div>
+        <div id="map-sexe-1" class="medium-map"></div>
+        <p class="map-subtitle"> Estudis Universitaris / CFGS </p>
+      </div>
+      <div>
+        <div id="map-sexe-2" class="medium-map"></div>
+        <p class="map-subtitle"> Batxillerat / CFGM </p>
+      </div>
+      <div>
+        <div id="map-sexe-3" class="medium-map"></div>
+        <p class="map-subtitle"> ESO </p>
+      </div> 
+      <div id="map-sexe-3_legend"></div>
+    </section>
+    <div class="obs">
+      A Barcelona, hi ha <b>48107</b> dones més que homes amb estudis universitaris o CFGS
+    </div>
+    
+    
+    
+    <hr id="translate-section"/>
+    
+    
+    
+    <section class="row">
+      <div class="info">
+        Totes les dades utilitzades en aquesta visualització han estat obtingudes del portal OpenDataBcn:
+        <ul>
+          <li><a target="_blank" href="https://opendata-ajuntament.barcelona.cat/data/ca/dataset/est-padro-nivell-academic-sexe">Població de la ciutat de Barcelona segons sexe i nivell acadèmic</a></li>
+          <li><a target="_blank" href="https://opendata-ajuntament.barcelona.cat/data/ca/dataset/est-renda-familiar">Distribució territorial de la renda familiar a la ciutat de Barcelona
+</a></li>
+        </ul>
+      </div>
+      
+    </section>
+    
+    <!-- <a style="color: black; text-decoration: none;" href="#translate-section"><div id="translate-msg"> Idiomas / Languages </div></a>
+    
+    <section class="one-col">
+      <b> Canviar idioma: </b>
+      <div id="google_translate_element"></div>
+    </section>-->
+    
+    <hr />
+    
+    <h2> Autors: </h2>
+    <section class="row">
+      <div class="profile">
+        <b>Marina Rosell</b><br />
+        Data Science UPC <br/><br />
+        <img width=150 src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fphoto_2019-05-06_18-34-28.jpg?v=1603618056566"><br /><br />
+        Linkedin: <a target="_blank" href="https://www.linkedin.com/in/marina-rosell-murillo-b4300214b/">Marina Rosell</a><br />
+        Twitter: <a target="_blank" href="https://www.twitter.com/Marina_Rosell_M">@Marina_Rosell_M</a>
+      </div>
+      <div class="profile">
+        <b>Raúl Higueras</b><br />
+          Data Science UPC <br /><br />
+        <img width=150 src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2F2020-08-21%2017.39.13.jpg?v=1603407173688"><br /><br />
+        Linkedin: <a target="_blank" href="https://www.linkedin.com/in/raul-higueras/">raul-higueras</a><br />
+        Twitter: <a target="_blank" href="https://www.twitter.com/raul_higueras7">@raul_higueras7</a>
+      </div>
+    </section>
+
+    
+    <hr />
+    
+
+  </body>
+</html>

@@ -1,0 +1,3996 @@
+{
+  "config": {
+    "view": {"continuousWidth": 400, "continuousHeight": 300},
+    "axis": {"labelFontSize": 12, "titleFontSize": 12},
+    "legend": {"labelFontSize": 12, "offset": -200, "titleFontSize": 14},
+    "title": {"fontSize": 15}
+  },
+  "hconcat": [
+    {
+      "vconcat": [
+        {
+          "mark": {"type": "circle", "size": 50},
+          "encoding": {
+            "color": {
+              "condition": {
+                "type": "nominal",
+                "field": "Nom_Districte",
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": "lightgray"
+            },
+            "opacity": {
+              "condition": {
+                "value": 0.8,
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": 0.2
+            },
+            "tooltip": [
+              {"type": "nominal", "field": "Nom_Barri", "title": "Barri"},
+              {
+                "type": "quantitative",
+                "field": "Nombre",
+                "title": "N. de persones"
+              },
+              {"type": "quantitative", "field": "Percentatge", "format": ".2%"},
+              {"type": "quantitative", "field": "Renda"}
+            ],
+            "x": {
+              "type": "quantitative",
+              "axis": {"title": "Índex Renda"},
+              "field": "Renda"
+            },
+            "y": {
+              "type": "quantitative",
+              "axis": {"format": "%"},
+              "field": "Percentatge",
+              "scale": {"domain": [0, 0.6]},
+              "title": "Població"
+            }
+          },
+          "height": 200,
+          "selection": {
+            "selector004": {
+              "type": "multi",
+              "fields": ["Nom_Districte"],
+              "bind": "legend"
+            },
+            "selector005": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector006": {
+              "type": "interval",
+              "bind": "scales",
+              "encodings": ["x", "y"]
+            }
+          },
+          "title": "Sense estudis",
+          "transform": [
+            {"filter": "(datum.Nivell_academic === 'Sense estudis')"}
+          ],
+          "width": 250
+        },
+        {
+          "mark": {"type": "circle", "size": 50},
+          "encoding": {
+            "color": {
+              "condition": {
+                "type": "nominal",
+                "field": "Nom_Districte",
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": "lightgray"
+            },
+            "opacity": {
+              "condition": {
+                "value": 0.8,
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": 0.2
+            },
+            "tooltip": [
+              {"type": "nominal", "field": "Nom_Barri", "title": "Barri"},
+              {
+                "type": "quantitative",
+                "field": "Nombre",
+                "title": "N. de persones"
+              },
+              {"type": "quantitative", "field": "Percentatge", "format": ".2%"},
+              {"type": "quantitative", "field": "Renda"}
+            ],
+            "x": {
+              "type": "quantitative",
+              "axis": {"title": "Índex Renda"},
+              "field": "Renda"
+            },
+            "y": {
+              "type": "quantitative",
+              "axis": {"format": "%"},
+              "field": "Percentatge",
+              "scale": {"domain": [0, 0.6]},
+              "title": "Població"
+            }
+          },
+          "height": 200,
+          "selection": {
+            "selector004": {
+              "type": "multi",
+              "fields": ["Nom_Districte"],
+              "bind": "legend"
+            },
+            "selector005": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector006": {
+              "type": "interval",
+              "bind": "scales",
+              "encodings": ["x", "y"]
+            }
+          },
+          "title": "ESO",
+          "transform": [{"filter": "(datum.Nivell_academic === 'ESO')"}],
+          "width": 250
+        }
+      ]
+    },
+    {
+      "vconcat": [
+        {
+          "mark": {"type": "circle", "size": 50},
+          "encoding": {
+            "color": {
+              "condition": {
+                "type": "nominal",
+                "field": "Nom_Districte",
+                "legend": {"title": "Nom Districte"},
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": "lightgray"
+            },
+            "opacity": {
+              "condition": {
+                "value": 0.8,
+                "selection": {"or": ["selector004", "selector005"]}
+              },
+              "value": 0.2
+            },
+            "tooltip": [
+              {"type": "nominal", "field": "Nom_Barri", "title": "Barri"},
+              {
+                "type": "quantitative",
+                "field": "Nombre",
+                "title": "N. de persones"
+              },
+              {"type": "quantitative", "field": "Percentatge", "format": ".2%"},
+              {"type": "quantitative", "field": "Renda"}
+            ],
+            "x": {
+              "type": "quantitative",
+              "axis": {"title": "Índex Renda"},
+              "field": "Renda"
+            },
+            "y": {
+              "type": "quantitative",
+              "axis": {"format": "%"},
+              "field": "Percentatge",
+              "scale": {"domain": [0, 0.6]},
+              "title": "Població"
+            }
+          },
+          "height": 200,
+          "selection": {
+            "selector004": {
+              "type": "multi",
+              "fields": ["Nom_Districte"],
+              "bind": "legend"
+            },
+            "selector005": {"type": "multi", "fields": ["Nom_Districte"]},
+            "selector006": {
+              "type": "interval",
+              "bind": "scales",
+              "encodings": ["x", "y"]
+            }
+          },
+          "title": "Estudis primaris",
+          "transform": [
+            {"filter": "(datum.Nivell_academic === 'Estudis primaris')"}
+          ],
+          "width": 250
+        },
+        {
+          "hconcat": [
+            {
+              "mark": {"type": "circle", "size": 50},
+              "encoding": {
+                "color": {
+                  "condition": {
+                    "type": "nominal",
+                    "field": "Nom_Districte",
+                    "legend": {"title": "Nom Districte"},
+                    "selection": {"or": ["selector004", "selector005"]}
+                  },
+                  "value": "lightgray"
+                },
+                "opacity": {
+                  "condition": {
+                    "value": 0.8,
+                    "selection": {"or": ["selector004", "selector005"]}
+                  },
+                  "value": 0.2
+                },
+                "tooltip": [
+                  {"type": "nominal", "field": "Nom_Barri", "title": "Barri"},
+                  {
+                    "type": "quantitative",
+                    "field": "Nombre",
+                    "title": "N. de persones"
+                  },
+                  {
+                    "type": "quantitative",
+                    "field": "Percentatge",
+                    "format": ".2%"
+                  },
+                  {"type": "quantitative", "field": "Renda"}
+                ],
+                "x": {
+                  "type": "quantitative",
+                  "axis": {"title": "Índex Renda"},
+                  "field": "Renda"
+                },
+                "y": {
+                  "type": "quantitative",
+                  "axis": {"format": "%"},
+                  "field": "Percentatge",
+                  "scale": {"domain": [0, 0.6]},
+                  "title": "Població"
+                }
+              },
+              "height": 200,
+              "selection": {
+                "selector004": {
+                  "type": "multi",
+                  "fields": ["Nom_Districte"],
+                  "bind": "legend"
+                },
+                "selector005": {"type": "multi", "fields": ["Nom_Districte"]},
+                "selector006": {
+                  "type": "interval",
+                  "bind": "scales",
+                  "encodings": ["x", "y"]
+                }
+              },
+              "title": "Batxillerat / CFGM",
+              "transform": [
+                {"filter": "(datum.Nivell_academic === 'Batxillerat / CFGM')"}
+              ],
+              "width": 250
+            },
+            {
+              "mark": {"type": "circle", "size": 50},
+              "encoding": {
+                "color": {
+                  "condition": {
+                    "type": "nominal",
+                    "field": "Nom_Districte",
+                    "legend": {"title": "Nom Districte"},
+                    "selection": {"or": ["selector004", "selector005"]}
+                  },
+                  "value": "lightgray"
+                },
+                "opacity": {
+                  "condition": {
+                    "value": 0.8,
+                    "selection": {"or": ["selector004", "selector005"]}
+                  },
+                  "value": 0.2
+                },
+                "tooltip": [
+                  {"type": "nominal", "field": "Nom_Barri", "title": "Barri"},
+                  {
+                    "type": "quantitative",
+                    "field": "Nombre",
+                    "title": "N. de persones"
+                  },
+                  {
+                    "type": "quantitative",
+                    "field": "Percentatge",
+                    "format": ".2%"
+                  },
+                  {"type": "quantitative", "field": "Renda"}
+                ],
+                "x": {
+                  "type": "quantitative",
+                  "axis": {"title": "Índex Renda"},
+                  "field": "Renda"
+                },
+                "y": {
+                  "type": "quantitative",
+                  "axis": {"format": "%"},
+                  "field": "Percentatge",
+                  "scale": {"domain": [0, 0.6]},
+                  "title": "Població"
+                }
+              },
+              "height": 200,
+              "selection": {
+                "selector004": {
+                  "type": "multi",
+                  "fields": ["Nom_Districte"],
+                  "bind": "legend"
+                },
+                "selector005": {"type": "multi", "fields": ["Nom_Districte"]},
+                "selector006": {
+                  "type": "interval",
+                  "bind": "scales",
+                  "encodings": ["x", "y"]
+                }
+              },
+              "title": "Estudis universitaris / CFGS",
+              "transform": [
+                {
+                  "filter": "(datum.Nivell_academic === 'Estudis universitaris / CFGS')"
+                }
+              ],
+              "width": 250
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "data": {"name": "data-34771f1f78759bc4680b260606155e42"},
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "datasets": {
+    "data-34771f1f78759bc4680b260606155e42": [
+      {
+        "Codi_Barri": 1,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Raval",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 7501,
+        "Renda": 71.2,
+        "Nombre total": 41458,
+        "Percentatge": 0.1809
+      },
+      {
+        "Codi_Barri": 1,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Raval",
+        "Nivell_academic": "ESO",
+        "Nombre": 9672,
+        "Renda": 71.2,
+        "Nombre total": 41458,
+        "Percentatge": 0.2333
+      },
+      {
+        "Codi_Barri": 1,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Raval",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 12711,
+        "Renda": 71.2,
+        "Nombre total": 41458,
+        "Percentatge": 0.3066
+      },
+      {
+        "Codi_Barri": 1,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Raval",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 10042,
+        "Renda": 71.2,
+        "Nombre total": 41458,
+        "Percentatge": 0.2422
+      },
+      {
+        "Codi_Barri": 1,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Raval",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1532,
+        "Renda": 71.2,
+        "Nombre total": 41458,
+        "Percentatge": 0.037
+      },
+      {
+        "Codi_Barri": 2,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Barri Gòtic",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3421,
+        "Renda": 106.1,
+        "Nombre total": 14796,
+        "Percentatge": 0.2312
+      },
+      {
+        "Codi_Barri": 2,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Barri Gòtic",
+        "Nivell_academic": "ESO",
+        "Nombre": 2687,
+        "Renda": 106.1,
+        "Nombre total": 14796,
+        "Percentatge": 0.1816
+      },
+      {
+        "Codi_Barri": 2,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Barri Gòtic",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2538,
+        "Renda": 106.1,
+        "Nombre total": 14796,
+        "Percentatge": 0.1715
+      },
+      {
+        "Codi_Barri": 2,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Barri Gòtic",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5734,
+        "Renda": 106.1,
+        "Nombre total": 14796,
+        "Percentatge": 0.3875
+      },
+      {
+        "Codi_Barri": 2,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "el Barri Gòtic",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 416,
+        "Renda": 106.1,
+        "Nombre total": 14796,
+        "Percentatge": 0.0281
+      },
+      {
+        "Codi_Barri": 3,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "la Barceloneta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2859,
+        "Renda": 79.6,
+        "Nombre total": 13749,
+        "Percentatge": 0.2079
+      },
+      {
+        "Codi_Barri": 3,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "la Barceloneta",
+        "Nivell_academic": "ESO",
+        "Nombre": 3319,
+        "Renda": 79.6,
+        "Nombre total": 13749,
+        "Percentatge": 0.2414
+      },
+      {
+        "Codi_Barri": 3,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "la Barceloneta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3108,
+        "Renda": 79.6,
+        "Nombre total": 13749,
+        "Percentatge": 0.2261
+      },
+      {
+        "Codi_Barri": 3,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "la Barceloneta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3763,
+        "Renda": 79.6,
+        "Nombre total": 13749,
+        "Percentatge": 0.2737
+      },
+      {
+        "Codi_Barri": 3,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "la Barceloneta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 700,
+        "Renda": 79.6,
+        "Nombre total": 13749,
+        "Percentatge": 0.0509
+      },
+      {
+        "Codi_Barri": 4,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "Sant Pere, Santa Caterina i la Ribera",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 4544,
+        "Renda": 99.4,
+        "Nombre total": 20557,
+        "Percentatge": 0.221
+      },
+      {
+        "Codi_Barri": 4,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "Sant Pere, Santa Caterina i la Ribera",
+        "Nivell_academic": "ESO",
+        "Nombre": 3511,
+        "Renda": 99.4,
+        "Nombre total": 20557,
+        "Percentatge": 0.1708
+      },
+      {
+        "Codi_Barri": 4,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "Sant Pere, Santa Caterina i la Ribera",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3663,
+        "Renda": 99.4,
+        "Nombre total": 20557,
+        "Percentatge": 0.1782
+      },
+      {
+        "Codi_Barri": 4,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "Sant Pere, Santa Caterina i la Ribera",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 8172,
+        "Renda": 99.4,
+        "Nombre total": 20557,
+        "Percentatge": 0.3975
+      },
+      {
+        "Codi_Barri": 4,
+        "Nom_Districte": "Ciutat Vella",
+        "Nom_Barri": "Sant Pere, Santa Caterina i la Ribera",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 667,
+        "Renda": 99.4,
+        "Nombre total": 20557,
+        "Percentatge": 0.0324
+      },
+      {
+        "Codi_Barri": 5,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "el Fort Pienc",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 7635,
+        "Renda": 106.5,
+        "Nombre total": 28123,
+        "Percentatge": 0.2715
+      },
+      {
+        "Codi_Barri": 5,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "el Fort Pienc",
+        "Nivell_academic": "ESO",
+        "Nombre": 5163,
+        "Renda": 106.5,
+        "Nombre total": 28123,
+        "Percentatge": 0.1836
+      },
+      {
+        "Codi_Barri": 5,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "el Fort Pienc",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3722,
+        "Renda": 106.5,
+        "Nombre total": 28123,
+        "Percentatge": 0.1323
+      },
+      {
+        "Codi_Barri": 5,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "el Fort Pienc",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 10733,
+        "Renda": 106.5,
+        "Nombre total": 28123,
+        "Percentatge": 0.3816
+      },
+      {
+        "Codi_Barri": 5,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "el Fort Pienc",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 870,
+        "Renda": 106.5,
+        "Nombre total": 28123,
+        "Percentatge": 0.0309
+      },
+      {
+        "Codi_Barri": 6,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Sagrada Família",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 12172,
+        "Renda": 101.8,
+        "Nombre total": 45924,
+        "Percentatge": 0.265
+      },
+      {
+        "Codi_Barri": 6,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Sagrada Família",
+        "Nivell_academic": "ESO",
+        "Nombre": 8891,
+        "Renda": 101.8,
+        "Nombre total": 45924,
+        "Percentatge": 0.1936
+      },
+      {
+        "Codi_Barri": 6,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Sagrada Família",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6701,
+        "Renda": 101.8,
+        "Nombre total": 45924,
+        "Percentatge": 0.1459
+      },
+      {
+        "Codi_Barri": 6,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Sagrada Família",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 16581,
+        "Renda": 101.8,
+        "Nombre total": 45924,
+        "Percentatge": 0.3611
+      },
+      {
+        "Codi_Barri": 6,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Sagrada Família",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1579,
+        "Renda": 101.8,
+        "Nombre total": 45924,
+        "Percentatge": 0.0344
+      },
+      {
+        "Codi_Barri": 7,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Dreta de l'Eixample",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 9974,
+        "Renda": 175.9,
+        "Nombre total": 38552,
+        "Percentatge": 0.2587
+      },
+      {
+        "Codi_Barri": 7,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Dreta de l'Eixample",
+        "Nivell_academic": "ESO",
+        "Nombre": 4995,
+        "Renda": 175.9,
+        "Nombre total": 38552,
+        "Percentatge": 0.1296
+      },
+      {
+        "Codi_Barri": 7,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Dreta de l'Eixample",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3174,
+        "Renda": 175.9,
+        "Nombre total": 38552,
+        "Percentatge": 0.0823
+      },
+      {
+        "Codi_Barri": 7,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Dreta de l'Eixample",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 19420,
+        "Renda": 175.9,
+        "Nombre total": 38552,
+        "Percentatge": 0.5037
+      },
+      {
+        "Codi_Barri": 7,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Dreta de l'Eixample",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 989,
+        "Renda": 175.9,
+        "Nombre total": 38552,
+        "Percentatge": 0.0257
+      },
+      {
+        "Codi_Barri": 8,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "l'Antiga Esquerra de l'Eixample",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 10105,
+        "Renda": 137.2,
+        "Nombre total": 37569,
+        "Percentatge": 0.269
+      },
+      {
+        "Codi_Barri": 8,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "l'Antiga Esquerra de l'Eixample",
+        "Nivell_academic": "ESO",
+        "Nombre": 5483,
+        "Renda": 137.2,
+        "Nombre total": 37569,
+        "Percentatge": 0.1459
+      },
+      {
+        "Codi_Barri": 8,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "l'Antiga Esquerra de l'Eixample",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3523,
+        "Renda": 137.2,
+        "Nombre total": 37569,
+        "Percentatge": 0.0938
+      },
+      {
+        "Codi_Barri": 8,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "l'Antiga Esquerra de l'Eixample",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 17491,
+        "Renda": 137.2,
+        "Nombre total": 37569,
+        "Percentatge": 0.4656
+      },
+      {
+        "Codi_Barri": 8,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "l'Antiga Esquerra de l'Eixample",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 967,
+        "Renda": 137.2,
+        "Nombre total": 37569,
+        "Percentatge": 0.0257
+      },
+      {
+        "Codi_Barri": 9,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Nova Esquerra de l'Eixample",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 13982,
+        "Renda": 110.2,
+        "Nombre total": 51723,
+        "Percentatge": 0.2703
+      },
+      {
+        "Codi_Barri": 9,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Nova Esquerra de l'Eixample",
+        "Nivell_academic": "ESO",
+        "Nombre": 8718,
+        "Renda": 110.2,
+        "Nombre total": 51723,
+        "Percentatge": 0.1686
+      },
+      {
+        "Codi_Barri": 9,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Nova Esquerra de l'Eixample",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6237,
+        "Renda": 110.2,
+        "Nombre total": 51723,
+        "Percentatge": 0.1206
+      },
+      {
+        "Codi_Barri": 9,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Nova Esquerra de l'Eixample",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 21367,
+        "Renda": 110.2,
+        "Nombre total": 51723,
+        "Percentatge": 0.4131
+      },
+      {
+        "Codi_Barri": 9,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "la Nova Esquerra de l'Eixample",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1419,
+        "Renda": 110.2,
+        "Nombre total": 51723,
+        "Percentatge": 0.0274
+      },
+      {
+        "Codi_Barri": 10,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "Sant Antoni",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 8770,
+        "Renda": 104.2,
+        "Nombre total": 34182,
+        "Percentatge": 0.2566
+      },
+      {
+        "Codi_Barri": 10,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "Sant Antoni",
+        "Nivell_academic": "ESO",
+        "Nombre": 6689,
+        "Renda": 104.2,
+        "Nombre total": 34182,
+        "Percentatge": 0.1957
+      },
+      {
+        "Codi_Barri": 10,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "Sant Antoni",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5408,
+        "Renda": 104.2,
+        "Nombre total": 34182,
+        "Percentatge": 0.1582
+      },
+      {
+        "Codi_Barri": 10,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "Sant Antoni",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 12053,
+        "Renda": 104.2,
+        "Nombre total": 34182,
+        "Percentatge": 0.3526
+      },
+      {
+        "Codi_Barri": 10,
+        "Nom_Districte": "Eixample",
+        "Nom_Barri": "Sant Antoni",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1262,
+        "Renda": 104.2,
+        "Nombre total": 34182,
+        "Percentatge": 0.0369
+      },
+      {
+        "Codi_Barri": 11,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "el Poble Sec",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 7936,
+        "Renda": 82.2,
+        "Nombre total": 35352,
+        "Percentatge": 0.2245
+      },
+      {
+        "Codi_Barri": 11,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "el Poble Sec",
+        "Nivell_academic": "ESO",
+        "Nombre": 8263,
+        "Renda": 82.2,
+        "Nombre total": 35352,
+        "Percentatge": 0.2337
+      },
+      {
+        "Codi_Barri": 11,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "el Poble Sec",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 8633,
+        "Renda": 82.2,
+        "Nombre total": 35352,
+        "Percentatge": 0.2442
+      },
+      {
+        "Codi_Barri": 11,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "el Poble Sec",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 8972,
+        "Renda": 82.2,
+        "Nombre total": 35352,
+        "Percentatge": 0.2538
+      },
+      {
+        "Codi_Barri": 11,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "el Poble Sec",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1548,
+        "Renda": 82.2,
+        "Nombre total": 35352,
+        "Percentatge": 0.0438
+      },
+      {
+        "Codi_Barri": 12,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina del Prat Vermell",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 118,
+        "Renda": 40,
+        "Nombre total": 993,
+        "Percentatge": 0.1188
+      },
+      {
+        "Codi_Barri": 12,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina del Prat Vermell",
+        "Nivell_academic": "ESO",
+        "Nombre": 323,
+        "Renda": 40,
+        "Nombre total": 993,
+        "Percentatge": 0.3253
+      },
+      {
+        "Codi_Barri": 12,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina del Prat Vermell",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 420,
+        "Renda": 40,
+        "Nombre total": 993,
+        "Percentatge": 0.423
+      },
+      {
+        "Codi_Barri": 12,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina del Prat Vermell",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 53,
+        "Renda": 40,
+        "Nombre total": 993,
+        "Percentatge": 0.0534
+      },
+      {
+        "Codi_Barri": 12,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina del Prat Vermell",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 79,
+        "Renda": 40,
+        "Nombre total": 993,
+        "Percentatge": 0.0796
+      },
+      {
+        "Codi_Barri": 13,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina de Port",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6045,
+        "Renda": 69.3,
+        "Nombre total": 26131,
+        "Percentatge": 0.2313
+      },
+      {
+        "Codi_Barri": 13,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina de Port",
+        "Nivell_academic": "ESO",
+        "Nombre": 7218,
+        "Renda": 69.3,
+        "Nombre total": 26131,
+        "Percentatge": 0.2762
+      },
+      {
+        "Codi_Barri": 13,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina de Port",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 7535,
+        "Renda": 69.3,
+        "Nombre total": 26131,
+        "Percentatge": 0.2884
+      },
+      {
+        "Codi_Barri": 13,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina de Port",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3755,
+        "Renda": 69.3,
+        "Nombre total": 26131,
+        "Percentatge": 0.1437
+      },
+      {
+        "Codi_Barri": 13,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Marina de Port",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1578,
+        "Renda": 69.3,
+        "Nombre total": 26131,
+        "Percentatge": 0.0604
+      },
+      {
+        "Codi_Barri": 14,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Font de la Guatlla",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2324,
+        "Renda": 82.9,
+        "Nombre total": 9262,
+        "Percentatge": 0.2509
+      },
+      {
+        "Codi_Barri": 14,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Font de la Guatlla",
+        "Nivell_academic": "ESO",
+        "Nombre": 2017,
+        "Renda": 82.9,
+        "Nombre total": 9262,
+        "Percentatge": 0.2178
+      },
+      {
+        "Codi_Barri": 14,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Font de la Guatlla",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1728,
+        "Renda": 82.9,
+        "Nombre total": 9262,
+        "Percentatge": 0.1866
+      },
+      {
+        "Codi_Barri": 14,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Font de la Guatlla",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2747,
+        "Renda": 82.9,
+        "Nombre total": 9262,
+        "Percentatge": 0.2966
+      },
+      {
+        "Codi_Barri": 14,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Font de la Guatlla",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 446,
+        "Renda": 82.9,
+        "Nombre total": 9262,
+        "Percentatge": 0.0482
+      },
+      {
+        "Codi_Barri": 15,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Hostafrancs",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3379,
+        "Renda": 99,
+        "Nombre total": 14061,
+        "Percentatge": 0.2403
+      },
+      {
+        "Codi_Barri": 15,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Hostafrancs",
+        "Nivell_academic": "ESO",
+        "Nombre": 3104,
+        "Renda": 99,
+        "Nombre total": 14061,
+        "Percentatge": 0.2208
+      },
+      {
+        "Codi_Barri": 15,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Hostafrancs",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2844,
+        "Renda": 99,
+        "Nombre total": 14061,
+        "Percentatge": 0.2023
+      },
+      {
+        "Codi_Barri": 15,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Hostafrancs",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4187,
+        "Renda": 99,
+        "Nombre total": 14061,
+        "Percentatge": 0.2978
+      },
+      {
+        "Codi_Barri": 15,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Hostafrancs",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 547,
+        "Renda": 99,
+        "Nombre total": 14061,
+        "Percentatge": 0.0389
+      },
+      {
+        "Codi_Barri": 16,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Bordeta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 4256,
+        "Renda": 79,
+        "Nombre total": 16256,
+        "Percentatge": 0.2618
+      },
+      {
+        "Codi_Barri": 16,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Bordeta",
+        "Nivell_academic": "ESO",
+        "Nombre": 4065,
+        "Renda": 79,
+        "Nombre total": 16256,
+        "Percentatge": 0.2501
+      },
+      {
+        "Codi_Barri": 16,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Bordeta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3453,
+        "Renda": 79,
+        "Nombre total": 16256,
+        "Percentatge": 0.2124
+      },
+      {
+        "Codi_Barri": 16,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Bordeta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3726,
+        "Renda": 79,
+        "Nombre total": 16256,
+        "Percentatge": 0.2292
+      },
+      {
+        "Codi_Barri": 16,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "la Bordeta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 756,
+        "Renda": 79,
+        "Nombre total": 16256,
+        "Percentatge": 0.0465
+      },
+      {
+        "Codi_Barri": 17,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants - Badal",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5199,
+        "Renda": 81,
+        "Nombre total": 21278,
+        "Percentatge": 0.2443
+      },
+      {
+        "Codi_Barri": 17,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants - Badal",
+        "Nivell_academic": "ESO",
+        "Nombre": 5034,
+        "Renda": 81,
+        "Nombre total": 21278,
+        "Percentatge": 0.2366
+      },
+      {
+        "Codi_Barri": 17,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants - Badal",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4743,
+        "Renda": 81,
+        "Nombre total": 21278,
+        "Percentatge": 0.2229
+      },
+      {
+        "Codi_Barri": 17,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants - Badal",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5280,
+        "Renda": 81,
+        "Nombre total": 21278,
+        "Percentatge": 0.2481
+      },
+      {
+        "Codi_Barri": 17,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants - Badal",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1022,
+        "Renda": 81,
+        "Nombre total": 21278,
+        "Percentatge": 0.048
+      },
+      {
+        "Codi_Barri": 18,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 9188,
+        "Renda": 99,
+        "Nombre total": 36194,
+        "Percentatge": 0.2539
+      },
+      {
+        "Codi_Barri": 18,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants",
+        "Nivell_academic": "ESO",
+        "Nombre": 7674,
+        "Renda": 99,
+        "Nombre total": 36194,
+        "Percentatge": 0.212
+      },
+      {
+        "Codi_Barri": 18,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6403,
+        "Renda": 99,
+        "Nombre total": 36194,
+        "Percentatge": 0.1769
+      },
+      {
+        "Codi_Barri": 18,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 11452,
+        "Renda": 99,
+        "Nombre total": 36194,
+        "Percentatge": 0.3164
+      },
+      {
+        "Codi_Barri": 18,
+        "Nom_Districte": "Sants-Montjuïc",
+        "Nom_Barri": "Sants",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1477,
+        "Renda": 99,
+        "Nombre total": 36194,
+        "Percentatge": 0.0408
+      },
+      {
+        "Codi_Barri": 19,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "les Corts",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 11147,
+        "Renda": 120,
+        "Nombre total": 40262,
+        "Percentatge": 0.2769
+      },
+      {
+        "Codi_Barri": 19,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "les Corts",
+        "Nivell_academic": "ESO",
+        "Nombre": 6479,
+        "Renda": 120,
+        "Nombre total": 40262,
+        "Percentatge": 0.1609
+      },
+      {
+        "Codi_Barri": 19,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "les Corts",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4512,
+        "Renda": 120,
+        "Nombre total": 40262,
+        "Percentatge": 0.1121
+      },
+      {
+        "Codi_Barri": 19,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "les Corts",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 16922,
+        "Renda": 120,
+        "Nombre total": 40262,
+        "Percentatge": 0.4203
+      },
+      {
+        "Codi_Barri": 19,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "les Corts",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1202,
+        "Renda": 120,
+        "Nombre total": 40262,
+        "Percentatge": 0.0299
+      },
+      {
+        "Codi_Barri": 20,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "la Maternitat i Sant Ramon",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5658,
+        "Renda": 114.2,
+        "Nombre total": 20922,
+        "Percentatge": 0.2704
+      },
+      {
+        "Codi_Barri": 20,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "la Maternitat i Sant Ramon",
+        "Nivell_academic": "ESO",
+        "Nombre": 3679,
+        "Renda": 114.2,
+        "Nombre total": 20922,
+        "Percentatge": 0.1758
+      },
+      {
+        "Codi_Barri": 20,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "la Maternitat i Sant Ramon",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2924,
+        "Renda": 114.2,
+        "Nombre total": 20922,
+        "Percentatge": 0.1398
+      },
+      {
+        "Codi_Barri": 20,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "la Maternitat i Sant Ramon",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 7871,
+        "Renda": 114.2,
+        "Nombre total": 20922,
+        "Percentatge": 0.3762
+      },
+      {
+        "Codi_Barri": 20,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "la Maternitat i Sant Ramon",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 790,
+        "Renda": 114.2,
+        "Nombre total": 20922,
+        "Percentatge": 0.0378
+      },
+      {
+        "Codi_Barri": 21,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "Pedralbes",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2803,
+        "Renda": 248.8,
+        "Nombre total": 10014,
+        "Percentatge": 0.2799
+      },
+      {
+        "Codi_Barri": 21,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "Pedralbes",
+        "Nivell_academic": "ESO",
+        "Nombre": 1166,
+        "Renda": 248.8,
+        "Nombre total": 10014,
+        "Percentatge": 0.1164
+      },
+      {
+        "Codi_Barri": 21,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "Pedralbes",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 572,
+        "Renda": 248.8,
+        "Nombre total": 10014,
+        "Percentatge": 0.0571
+      },
+      {
+        "Codi_Barri": 21,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "Pedralbes",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5155,
+        "Renda": 248.8,
+        "Nombre total": 10014,
+        "Percentatge": 0.5148
+      },
+      {
+        "Codi_Barri": 21,
+        "Nom_Districte": "Les Corts",
+        "Nom_Barri": "Pedralbes",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 318,
+        "Renda": 248.8,
+        "Nombre total": 10014,
+        "Percentatge": 0.0318
+      },
+      {
+        "Codi_Barri": 22,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Vallvidrera, el Tibidabo i les Planes",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1087,
+        "Renda": 144.1,
+        "Nombre total": 3762,
+        "Percentatge": 0.2889
+      },
+      {
+        "Codi_Barri": 22,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Vallvidrera, el Tibidabo i les Planes",
+        "Nivell_academic": "ESO",
+        "Nombre": 601,
+        "Renda": 144.1,
+        "Nombre total": 3762,
+        "Percentatge": 0.1598
+      },
+      {
+        "Codi_Barri": 22,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Vallvidrera, el Tibidabo i les Planes",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 356,
+        "Renda": 144.1,
+        "Nombre total": 3762,
+        "Percentatge": 0.0946
+      },
+      {
+        "Codi_Barri": 22,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Vallvidrera, el Tibidabo i les Planes",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1554,
+        "Renda": 144.1,
+        "Nombre total": 3762,
+        "Percentatge": 0.4131
+      },
+      {
+        "Codi_Barri": 22,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Vallvidrera, el Tibidabo i les Planes",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 164,
+        "Renda": 144.1,
+        "Nombre total": 3762,
+        "Percentatge": 0.0436
+      },
+      {
+        "Codi_Barri": 23,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sarrià",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5537,
+        "Renda": 193.6,
+        "Nombre total": 20270,
+        "Percentatge": 0.2732
+      },
+      {
+        "Codi_Barri": 23,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sarrià",
+        "Nivell_academic": "ESO",
+        "Nombre": 2482,
+        "Renda": 193.6,
+        "Nombre total": 20270,
+        "Percentatge": 0.1224
+      },
+      {
+        "Codi_Barri": 23,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sarrià",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1485,
+        "Renda": 193.6,
+        "Nombre total": 20270,
+        "Percentatge": 0.0733
+      },
+      {
+        "Codi_Barri": 23,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sarrià",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 10051,
+        "Renda": 193.6,
+        "Nombre total": 20270,
+        "Percentatge": 0.4959
+      },
+      {
+        "Codi_Barri": 23,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sarrià",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 715,
+        "Renda": 193.6,
+        "Nombre total": 20270,
+        "Percentatge": 0.0353
+      },
+      {
+        "Codi_Barri": 24,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "les Tres Torres",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 4112,
+        "Renda": 215.8,
+        "Nombre total": 13560,
+        "Percentatge": 0.3032
+      },
+      {
+        "Codi_Barri": 24,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "les Tres Torres",
+        "Nivell_academic": "ESO",
+        "Nombre": 1342,
+        "Renda": 215.8,
+        "Nombre total": 13560,
+        "Percentatge": 0.099
+      },
+      {
+        "Codi_Barri": 24,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "les Tres Torres",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 674,
+        "Renda": 215.8,
+        "Nombre total": 13560,
+        "Percentatge": 0.0497
+      },
+      {
+        "Codi_Barri": 24,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "les Tres Torres",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 7033,
+        "Renda": 215.8,
+        "Nombre total": 13560,
+        "Percentatge": 0.5187
+      },
+      {
+        "Codi_Barri": 24,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "les Tres Torres",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 399,
+        "Renda": 215.8,
+        "Nombre total": 13560,
+        "Percentatge": 0.0294
+      },
+      {
+        "Codi_Barri": 25,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - la Bonanova",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6464,
+        "Renda": 184.6,
+        "Nombre total": 21432,
+        "Percentatge": 0.3016
+      },
+      {
+        "Codi_Barri": 25,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - la Bonanova",
+        "Nivell_academic": "ESO",
+        "Nombre": 2511,
+        "Renda": 184.6,
+        "Nombre total": 21432,
+        "Percentatge": 0.1172
+      },
+      {
+        "Codi_Barri": 25,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - la Bonanova",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1332,
+        "Renda": 184.6,
+        "Nombre total": 21432,
+        "Percentatge": 0.0622
+      },
+      {
+        "Codi_Barri": 25,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - la Bonanova",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 10535,
+        "Renda": 184.6,
+        "Nombre total": 21432,
+        "Percentatge": 0.4916
+      },
+      {
+        "Codi_Barri": 25,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - la Bonanova",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 590,
+        "Renda": 184.6,
+        "Nombre total": 21432,
+        "Percentatge": 0.0275
+      },
+      {
+        "Codi_Barri": 26,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - Galvany",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 11843,
+        "Renda": 192.1,
+        "Nombre total": 40192,
+        "Percentatge": 0.2947
+      },
+      {
+        "Codi_Barri": 26,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - Galvany",
+        "Nivell_academic": "ESO",
+        "Nombre": 4492,
+        "Renda": 192.1,
+        "Nombre total": 40192,
+        "Percentatge": 0.1118
+      },
+      {
+        "Codi_Barri": 26,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - Galvany",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2300,
+        "Renda": 192.1,
+        "Nombre total": 40192,
+        "Percentatge": 0.0572
+      },
+      {
+        "Codi_Barri": 26,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - Galvany",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 20462,
+        "Renda": 192.1,
+        "Nombre total": 40192,
+        "Percentatge": 0.5091
+      },
+      {
+        "Codi_Barri": 26,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "Sant Gervasi - Galvany",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1095,
+        "Renda": 192.1,
+        "Nombre total": 40192,
+        "Percentatge": 0.0272
+      },
+      {
+        "Codi_Barri": 27,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "el Putxet i el Farró",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 7360,
+        "Renda": 144.6,
+        "Nombre total": 25101,
+        "Percentatge": 0.2932
+      },
+      {
+        "Codi_Barri": 27,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "el Putxet i el Farró",
+        "Nivell_academic": "ESO",
+        "Nombre": 3264,
+        "Renda": 144.6,
+        "Nombre total": 25101,
+        "Percentatge": 0.13
+      },
+      {
+        "Codi_Barri": 27,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "el Putxet i el Farró",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1566,
+        "Renda": 144.6,
+        "Nombre total": 25101,
+        "Percentatge": 0.0624
+      },
+      {
+        "Codi_Barri": 27,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "el Putxet i el Farró",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 12267,
+        "Renda": 144.6,
+        "Nombre total": 25101,
+        "Percentatge": 0.4887
+      },
+      {
+        "Codi_Barri": 27,
+        "Nom_Districte": "Sarrià-Sant Gervasi",
+        "Nom_Barri": "el Putxet i el Farró",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 644,
+        "Renda": 144.6,
+        "Nombre total": 25101,
+        "Percentatge": 0.0257
+      },
+      {
+        "Codi_Barri": 28,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "Vallcarca i els Penitents",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3666,
+        "Renda": 112.5,
+        "Nombre total": 13348,
+        "Percentatge": 0.2746
+      },
+      {
+        "Codi_Barri": 28,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "Vallcarca i els Penitents",
+        "Nivell_academic": "ESO",
+        "Nombre": 2434,
+        "Renda": 112.5,
+        "Nombre total": 13348,
+        "Percentatge": 0.1823
+      },
+      {
+        "Codi_Barri": 28,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "Vallcarca i els Penitents",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1543,
+        "Renda": 112.5,
+        "Nombre total": 13348,
+        "Percentatge": 0.1156
+      },
+      {
+        "Codi_Barri": 28,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "Vallcarca i els Penitents",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5207,
+        "Renda": 112.5,
+        "Nombre total": 13348,
+        "Percentatge": 0.3901
+      },
+      {
+        "Codi_Barri": 28,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "Vallcarca i els Penitents",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 498,
+        "Renda": 112.5,
+        "Nombre total": 13348,
+        "Percentatge": 0.0373
+      },
+      {
+        "Codi_Barri": 29,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Coll",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1753,
+        "Renda": 87,
+        "Nombre total": 6354,
+        "Percentatge": 0.2759
+      },
+      {
+        "Codi_Barri": 29,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Coll",
+        "Nivell_academic": "ESO",
+        "Nombre": 1407,
+        "Renda": 87,
+        "Nombre total": 6354,
+        "Percentatge": 0.2214
+      },
+      {
+        "Codi_Barri": 29,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Coll",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1044,
+        "Renda": 87,
+        "Nombre total": 6354,
+        "Percentatge": 0.1643
+      },
+      {
+        "Codi_Barri": 29,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Coll",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1882,
+        "Renda": 87,
+        "Nombre total": 6354,
+        "Percentatge": 0.2962
+      },
+      {
+        "Codi_Barri": 29,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Coll",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 268,
+        "Renda": 87,
+        "Nombre total": 6354,
+        "Percentatge": 0.0422
+      },
+      {
+        "Codi_Barri": 30,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Salut",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3188,
+        "Renda": 109.9,
+        "Nombre total": 11472,
+        "Percentatge": 0.2779
+      },
+      {
+        "Codi_Barri": 30,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Salut",
+        "Nivell_academic": "ESO",
+        "Nombre": 2002,
+        "Renda": 109.9,
+        "Nombre total": 11472,
+        "Percentatge": 0.1745
+      },
+      {
+        "Codi_Barri": 30,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Salut",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1376,
+        "Renda": 109.9,
+        "Nombre total": 11472,
+        "Percentatge": 0.1199
+      },
+      {
+        "Codi_Barri": 30,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Salut",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4559,
+        "Renda": 109.9,
+        "Nombre total": 11472,
+        "Percentatge": 0.3974
+      },
+      {
+        "Codi_Barri": 30,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Salut",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 347,
+        "Renda": 109.9,
+        "Nombre total": 11472,
+        "Percentatge": 0.0302
+      },
+      {
+        "Codi_Barri": 31,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Vila de Gràcia",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 11139,
+        "Renda": 104.4,
+        "Nombre total": 44629,
+        "Percentatge": 0.2496
+      },
+      {
+        "Codi_Barri": 31,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Vila de Gràcia",
+        "Nivell_academic": "ESO",
+        "Nombre": 6907,
+        "Renda": 104.4,
+        "Nombre total": 44629,
+        "Percentatge": 0.1548
+      },
+      {
+        "Codi_Barri": 31,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Vila de Gràcia",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5582,
+        "Renda": 104.4,
+        "Nombre total": 44629,
+        "Percentatge": 0.1251
+      },
+      {
+        "Codi_Barri": 31,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Vila de Gràcia",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 19586,
+        "Renda": 104.4,
+        "Nombre total": 44629,
+        "Percentatge": 0.4389
+      },
+      {
+        "Codi_Barri": 31,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "la Vila de Gràcia",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1415,
+        "Renda": 104.4,
+        "Nombre total": 44629,
+        "Percentatge": 0.0317
+      },
+      {
+        "Codi_Barri": 32,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Camp d'en Grassot i Gràcia Nova",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 8310,
+        "Renda": 105.7,
+        "Nombre total": 30189,
+        "Percentatge": 0.2753
+      },
+      {
+        "Codi_Barri": 32,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Camp d'en Grassot i Gràcia Nova",
+        "Nivell_academic": "ESO",
+        "Nombre": 5347,
+        "Renda": 105.7,
+        "Nombre total": 30189,
+        "Percentatge": 0.1771
+      },
+      {
+        "Codi_Barri": 32,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Camp d'en Grassot i Gràcia Nova",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3632,
+        "Renda": 105.7,
+        "Nombre total": 30189,
+        "Percentatge": 0.1203
+      },
+      {
+        "Codi_Barri": 32,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Camp d'en Grassot i Gràcia Nova",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 11996,
+        "Renda": 105.7,
+        "Nombre total": 30189,
+        "Percentatge": 0.3974
+      },
+      {
+        "Codi_Barri": 32,
+        "Nom_Districte": "Gràcia",
+        "Nom_Barri": "el Camp d'en Grassot i Gràcia Nova",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 904,
+        "Renda": 105.7,
+        "Nombre total": 30189,
+        "Percentatge": 0.0299
+      },
+      {
+        "Codi_Barri": 33,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Baix Guinardó",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6284,
+        "Renda": 92,
+        "Nombre total": 22723,
+        "Percentatge": 0.2765
+      },
+      {
+        "Codi_Barri": 33,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Baix Guinardó",
+        "Nivell_academic": "ESO",
+        "Nombre": 4872,
+        "Renda": 92,
+        "Nombre total": 22723,
+        "Percentatge": 0.2144
+      },
+      {
+        "Codi_Barri": 33,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Baix Guinardó",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3508,
+        "Renda": 92,
+        "Nombre total": 22723,
+        "Percentatge": 0.1544
+      },
+      {
+        "Codi_Barri": 33,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Baix Guinardó",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 7096,
+        "Renda": 92,
+        "Nombre total": 22723,
+        "Percentatge": 0.3123
+      },
+      {
+        "Codi_Barri": 33,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Baix Guinardó",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 963,
+        "Renda": 92,
+        "Nombre total": 22723,
+        "Percentatge": 0.0424
+      },
+      {
+        "Codi_Barri": 34,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Can Baró",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1986,
+        "Renda": 83.3,
+        "Nombre total": 7884,
+        "Percentatge": 0.2519
+      },
+      {
+        "Codi_Barri": 34,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Can Baró",
+        "Nivell_academic": "ESO",
+        "Nombre": 1913,
+        "Renda": 83.3,
+        "Nombre total": 7884,
+        "Percentatge": 0.2426
+      },
+      {
+        "Codi_Barri": 34,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Can Baró",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1527,
+        "Renda": 83.3,
+        "Nombre total": 7884,
+        "Percentatge": 0.1937
+      },
+      {
+        "Codi_Barri": 34,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Can Baró",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2046,
+        "Renda": 83.3,
+        "Nombre total": 7884,
+        "Percentatge": 0.2595
+      },
+      {
+        "Codi_Barri": 34,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Can Baró",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 412,
+        "Renda": 83.3,
+        "Nombre total": 7884,
+        "Percentatge": 0.0523
+      },
+      {
+        "Codi_Barri": 35,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Guinardó",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 8963,
+        "Renda": 79.1,
+        "Nombre total": 31640,
+        "Percentatge": 0.2833
+      },
+      {
+        "Codi_Barri": 35,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Guinardó",
+        "Nivell_academic": "ESO",
+        "Nombre": 7110,
+        "Renda": 79.1,
+        "Nombre total": 31640,
+        "Percentatge": 0.2247
+      },
+      {
+        "Codi_Barri": 35,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Guinardó",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5144,
+        "Renda": 79.1,
+        "Nombre total": 31640,
+        "Percentatge": 0.1626
+      },
+      {
+        "Codi_Barri": 35,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Guinardó",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 9162,
+        "Renda": 79.1,
+        "Nombre total": 31640,
+        "Percentatge": 0.2896
+      },
+      {
+        "Codi_Barri": 35,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Guinardó",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1261,
+        "Renda": 79.1,
+        "Nombre total": 31640,
+        "Percentatge": 0.0399
+      },
+      {
+        "Codi_Barri": 36,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Font d'en Fargues",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2258,
+        "Renda": 92.5,
+        "Nombre total": 7963,
+        "Percentatge": 0.2836
+      },
+      {
+        "Codi_Barri": 36,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Font d'en Fargues",
+        "Nivell_academic": "ESO",
+        "Nombre": 1807,
+        "Renda": 92.5,
+        "Nombre total": 7963,
+        "Percentatge": 0.2269
+      },
+      {
+        "Codi_Barri": 36,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Font d'en Fargues",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1168,
+        "Renda": 92.5,
+        "Nombre total": 7963,
+        "Percentatge": 0.1467
+      },
+      {
+        "Codi_Barri": 36,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Font d'en Fargues",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2425,
+        "Renda": 92.5,
+        "Nombre total": 7963,
+        "Percentatge": 0.3045
+      },
+      {
+        "Codi_Barri": 36,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Font d'en Fargues",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 305,
+        "Renda": 92.5,
+        "Nombre total": 7963,
+        "Percentatge": 0.0383
+      },
+      {
+        "Codi_Barri": 37,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Carmel",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5786,
+        "Renda": 54.2,
+        "Nombre total": 27193,
+        "Percentatge": 0.2128
+      },
+      {
+        "Codi_Barri": 37,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Carmel",
+        "Nivell_academic": "ESO",
+        "Nombre": 8526,
+        "Renda": 54.2,
+        "Nombre total": 27193,
+        "Percentatge": 0.3135
+      },
+      {
+        "Codi_Barri": 37,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Carmel",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 7437,
+        "Renda": 54.2,
+        "Nombre total": 27193,
+        "Percentatge": 0.2735
+      },
+      {
+        "Codi_Barri": 37,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Carmel",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3367,
+        "Renda": 54.2,
+        "Nombre total": 27193,
+        "Percentatge": 0.1238
+      },
+      {
+        "Codi_Barri": 37,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "el Carmel",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 2077,
+        "Renda": 54.2,
+        "Nombre total": 27193,
+        "Percentatge": 0.0764
+      },
+      {
+        "Codi_Barri": 38,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Teixonera",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2346,
+        "Renda": 73.7,
+        "Nombre total": 10073,
+        "Percentatge": 0.2329
+      },
+      {
+        "Codi_Barri": 38,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Teixonera",
+        "Nivell_academic": "ESO",
+        "Nombre": 2934,
+        "Renda": 73.7,
+        "Nombre total": 10073,
+        "Percentatge": 0.2913
+      },
+      {
+        "Codi_Barri": 38,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Teixonera",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2509,
+        "Renda": 73.7,
+        "Nombre total": 10073,
+        "Percentatge": 0.2491
+      },
+      {
+        "Codi_Barri": 38,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Teixonera",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1652,
+        "Renda": 73.7,
+        "Nombre total": 10073,
+        "Percentatge": 0.164
+      },
+      {
+        "Codi_Barri": 38,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Teixonera",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 632,
+        "Renda": 73.7,
+        "Nombre total": 10073,
+        "Percentatge": 0.0627
+      },
+      {
+        "Codi_Barri": 39,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Sant Genís dels Agudells",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1459,
+        "Renda": 84.1,
+        "Nombre total": 6080,
+        "Percentatge": 0.24
+      },
+      {
+        "Codi_Barri": 39,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Sant Genís dels Agudells",
+        "Nivell_academic": "ESO",
+        "Nombre": 1608,
+        "Renda": 84.1,
+        "Nombre total": 6080,
+        "Percentatge": 0.2645
+      },
+      {
+        "Codi_Barri": 39,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Sant Genís dels Agudells",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1362,
+        "Renda": 84.1,
+        "Nombre total": 6080,
+        "Percentatge": 0.224
+      },
+      {
+        "Codi_Barri": 39,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Sant Genís dels Agudells",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1190,
+        "Renda": 84.1,
+        "Nombre total": 6080,
+        "Percentatge": 0.1957
+      },
+      {
+        "Codi_Barri": 39,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Sant Genís dels Agudells",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 461,
+        "Renda": 84.1,
+        "Nombre total": 6080,
+        "Percentatge": 0.0758
+      },
+      {
+        "Codi_Barri": 40,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Montbau",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1139,
+        "Renda": 79.8,
+        "Nombre total": 4553,
+        "Percentatge": 0.2502
+      },
+      {
+        "Codi_Barri": 40,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Montbau",
+        "Nivell_academic": "ESO",
+        "Nombre": 1079,
+        "Renda": 79.8,
+        "Nombre total": 4553,
+        "Percentatge": 0.237
+      },
+      {
+        "Codi_Barri": 40,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Montbau",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 895,
+        "Renda": 79.8,
+        "Nombre total": 4553,
+        "Percentatge": 0.1966
+      },
+      {
+        "Codi_Barri": 40,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Montbau",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1090,
+        "Renda": 79.8,
+        "Nombre total": 4553,
+        "Percentatge": 0.2394
+      },
+      {
+        "Codi_Barri": 40,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Montbau",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 350,
+        "Renda": 79.8,
+        "Nombre total": 4553,
+        "Percentatge": 0.0769
+      },
+      {
+        "Codi_Barri": 41,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Vall d'Hebron",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1347,
+        "Renda": 95.8,
+        "Nombre total": 5033,
+        "Percentatge": 0.2676
+      },
+      {
+        "Codi_Barri": 41,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Vall d'Hebron",
+        "Nivell_academic": "ESO",
+        "Nombre": 1077,
+        "Renda": 95.8,
+        "Nombre total": 5033,
+        "Percentatge": 0.214
+      },
+      {
+        "Codi_Barri": 41,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Vall d'Hebron",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 883,
+        "Renda": 95.8,
+        "Nombre total": 5033,
+        "Percentatge": 0.1754
+      },
+      {
+        "Codi_Barri": 41,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Vall d'Hebron",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1498,
+        "Renda": 95.8,
+        "Nombre total": 5033,
+        "Percentatge": 0.2976
+      },
+      {
+        "Codi_Barri": 41,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Vall d'Hebron",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 228,
+        "Renda": 95.8,
+        "Nombre total": 5033,
+        "Percentatge": 0.0453
+      },
+      {
+        "Codi_Barri": 42,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Clota",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 116,
+        "Renda": 93.5,
+        "Nombre total": 521,
+        "Percentatge": 0.2226
+      },
+      {
+        "Codi_Barri": 42,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Clota",
+        "Nivell_academic": "ESO",
+        "Nombre": 131,
+        "Renda": 93.5,
+        "Nombre total": 521,
+        "Percentatge": 0.2514
+      },
+      {
+        "Codi_Barri": 42,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Clota",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 94,
+        "Renda": 93.5,
+        "Nombre total": 521,
+        "Percentatge": 0.1804
+      },
+      {
+        "Codi_Barri": 42,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Clota",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 150,
+        "Renda": 93.5,
+        "Nombre total": 521,
+        "Percentatge": 0.2879
+      },
+      {
+        "Codi_Barri": 42,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "la Clota",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 30,
+        "Renda": 93.5,
+        "Nombre total": 521,
+        "Percentatge": 0.0576
+      },
+      {
+        "Codi_Barri": 43,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Horta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6072,
+        "Renda": 79.8,
+        "Nombre total": 23180,
+        "Percentatge": 0.2619
+      },
+      {
+        "Codi_Barri": 43,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Horta",
+        "Nivell_academic": "ESO",
+        "Nombre": 5511,
+        "Renda": 79.8,
+        "Nombre total": 23180,
+        "Percentatge": 0.2377
+      },
+      {
+        "Codi_Barri": 43,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Horta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5035,
+        "Renda": 79.8,
+        "Nombre total": 23180,
+        "Percentatge": 0.2172
+      },
+      {
+        "Codi_Barri": 43,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Horta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5239,
+        "Renda": 79.8,
+        "Nombre total": 23180,
+        "Percentatge": 0.226
+      },
+      {
+        "Codi_Barri": 43,
+        "Nom_Districte": "Horta-Guinardó",
+        "Nom_Barri": "Horta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1323,
+        "Renda": 79.8,
+        "Nombre total": 23180,
+        "Percentatge": 0.0571
+      },
+      {
+        "Codi_Barri": 44,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vilapicina i la Torre Llobeta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5831,
+        "Renda": 63.8,
+        "Nombre total": 22327,
+        "Percentatge": 0.2612
+      },
+      {
+        "Codi_Barri": 44,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vilapicina i la Torre Llobeta",
+        "Nivell_academic": "ESO",
+        "Nombre": 5818,
+        "Renda": 63.8,
+        "Nombre total": 22327,
+        "Percentatge": 0.2606
+      },
+      {
+        "Codi_Barri": 44,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vilapicina i la Torre Llobeta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4667,
+        "Renda": 63.8,
+        "Nombre total": 22327,
+        "Percentatge": 0.209
+      },
+      {
+        "Codi_Barri": 44,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vilapicina i la Torre Llobeta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4821,
+        "Renda": 63.8,
+        "Nombre total": 22327,
+        "Percentatge": 0.2159
+      },
+      {
+        "Codi_Barri": 44,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vilapicina i la Torre Llobeta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1190,
+        "Renda": 63.8,
+        "Nombre total": 22327,
+        "Percentatge": 0.0533
+      },
+      {
+        "Codi_Barri": 45,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Porta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5224,
+        "Renda": 64.4,
+        "Nombre total": 21727,
+        "Percentatge": 0.2404
+      },
+      {
+        "Codi_Barri": 45,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Porta",
+        "Nivell_academic": "ESO",
+        "Nombre": 5889,
+        "Renda": 64.4,
+        "Nombre total": 21727,
+        "Percentatge": 0.271
+      },
+      {
+        "Codi_Barri": 45,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Porta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5578,
+        "Renda": 64.4,
+        "Nombre total": 21727,
+        "Percentatge": 0.2567
+      },
+      {
+        "Codi_Barri": 45,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Porta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3595,
+        "Renda": 64.4,
+        "Nombre total": 21727,
+        "Percentatge": 0.1655
+      },
+      {
+        "Codi_Barri": 45,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Porta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1441,
+        "Renda": 64.4,
+        "Nombre total": 21727,
+        "Percentatge": 0.0663
+      },
+      {
+        "Codi_Barri": 46,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "el Turó de la Peira",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3077,
+        "Renda": 51.9,
+        "Nombre total": 13309,
+        "Percentatge": 0.2312
+      },
+      {
+        "Codi_Barri": 46,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "el Turó de la Peira",
+        "Nivell_academic": "ESO",
+        "Nombre": 3709,
+        "Renda": 51.9,
+        "Nombre total": 13309,
+        "Percentatge": 0.2787
+      },
+      {
+        "Codi_Barri": 46,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "el Turó de la Peira",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3643,
+        "Renda": 51.9,
+        "Nombre total": 13309,
+        "Percentatge": 0.2737
+      },
+      {
+        "Codi_Barri": 46,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "el Turó de la Peira",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1833,
+        "Renda": 51.9,
+        "Nombre total": 13309,
+        "Percentatge": 0.1377
+      },
+      {
+        "Codi_Barri": 46,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "el Turó de la Peira",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1047,
+        "Renda": 51.9,
+        "Nombre total": 13309,
+        "Percentatge": 0.0787
+      },
+      {
+        "Codi_Barri": 47,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Can Peguera",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 336,
+        "Renda": 51.5,
+        "Nombre total": 1917,
+        "Percentatge": 0.1753
+      },
+      {
+        "Codi_Barri": 47,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Can Peguera",
+        "Nivell_academic": "ESO",
+        "Nombre": 610,
+        "Renda": 51.5,
+        "Nombre total": 1917,
+        "Percentatge": 0.3182
+      },
+      {
+        "Codi_Barri": 47,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Can Peguera",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 637,
+        "Renda": 51.5,
+        "Nombre total": 1917,
+        "Percentatge": 0.3323
+      },
+      {
+        "Codi_Barri": 47,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Can Peguera",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 170,
+        "Renda": 51.5,
+        "Nombre total": 1917,
+        "Percentatge": 0.0887
+      },
+      {
+        "Codi_Barri": 47,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Can Peguera",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 164,
+        "Renda": 51.5,
+        "Nombre total": 1917,
+        "Percentatge": 0.0856
+      },
+      {
+        "Codi_Barri": 48,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Guineueta",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3268,
+        "Renda": 53.8,
+        "Nombre total": 13203,
+        "Percentatge": 0.2475
+      },
+      {
+        "Codi_Barri": 48,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Guineueta",
+        "Nivell_academic": "ESO",
+        "Nombre": 3663,
+        "Renda": 53.8,
+        "Nombre total": 13203,
+        "Percentatge": 0.2774
+      },
+      {
+        "Codi_Barri": 48,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Guineueta",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3149,
+        "Renda": 53.8,
+        "Nombre total": 13203,
+        "Percentatge": 0.2385
+      },
+      {
+        "Codi_Barri": 48,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Guineueta",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2292,
+        "Renda": 53.8,
+        "Nombre total": 13203,
+        "Percentatge": 0.1736
+      },
+      {
+        "Codi_Barri": 48,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Guineueta",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 831,
+        "Renda": 53.8,
+        "Nombre total": 13203,
+        "Percentatge": 0.0629
+      },
+      {
+        "Codi_Barri": 49,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Canyelles",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1146,
+        "Renda": 52.2,
+        "Nombre total": 6023,
+        "Percentatge": 0.1903
+      },
+      {
+        "Codi_Barri": 49,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Canyelles",
+        "Nivell_academic": "ESO",
+        "Nombre": 1923,
+        "Renda": 52.2,
+        "Nombre total": 6023,
+        "Percentatge": 0.3193
+      },
+      {
+        "Codi_Barri": 49,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Canyelles",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1839,
+        "Renda": 52.2,
+        "Nombre total": 6023,
+        "Percentatge": 0.3053
+      },
+      {
+        "Codi_Barri": 49,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Canyelles",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 687,
+        "Renda": 52.2,
+        "Nombre total": 6023,
+        "Percentatge": 0.1141
+      },
+      {
+        "Codi_Barri": 49,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Canyelles",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 428,
+        "Renda": 52.2,
+        "Nombre total": 6023,
+        "Percentatge": 0.0711
+      },
+      {
+        "Codi_Barri": 50,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "les Roquetes",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2353,
+        "Renda": 49.7,
+        "Nombre total": 13153,
+        "Percentatge": 0.1789
+      },
+      {
+        "Codi_Barri": 50,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "les Roquetes",
+        "Nivell_academic": "ESO",
+        "Nombre": 4337,
+        "Renda": 49.7,
+        "Nombre total": 13153,
+        "Percentatge": 0.3297
+      },
+      {
+        "Codi_Barri": 50,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "les Roquetes",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4356,
+        "Renda": 49.7,
+        "Nombre total": 13153,
+        "Percentatge": 0.3312
+      },
+      {
+        "Codi_Barri": 50,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "les Roquetes",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1154,
+        "Renda": 49.7,
+        "Nombre total": 13153,
+        "Percentatge": 0.0877
+      },
+      {
+        "Codi_Barri": 50,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "les Roquetes",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 953,
+        "Renda": 49.7,
+        "Nombre total": 13153,
+        "Percentatge": 0.0725
+      },
+      {
+        "Codi_Barri": 51,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Verdun",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2140,
+        "Renda": 51.3,
+        "Nombre total": 10651,
+        "Percentatge": 0.2009
+      },
+      {
+        "Codi_Barri": 51,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Verdun",
+        "Nivell_academic": "ESO",
+        "Nombre": 3328,
+        "Renda": 51.3,
+        "Nombre total": 10651,
+        "Percentatge": 0.3125
+      },
+      {
+        "Codi_Barri": 51,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Verdun",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3192,
+        "Renda": 51.3,
+        "Nombre total": 10651,
+        "Percentatge": 0.2997
+      },
+      {
+        "Codi_Barri": 51,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Verdun",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1178,
+        "Renda": 51.3,
+        "Nombre total": 10651,
+        "Percentatge": 0.1106
+      },
+      {
+        "Codi_Barri": 51,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Verdun",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 813,
+        "Renda": 51.3,
+        "Nombre total": 10651,
+        "Percentatge": 0.0763
+      },
+      {
+        "Codi_Barri": 52,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Prosperitat",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 4906,
+        "Renda": 56,
+        "Nombre total": 22844,
+        "Percentatge": 0.2148
+      },
+      {
+        "Codi_Barri": 52,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Prosperitat",
+        "Nivell_academic": "ESO",
+        "Nombre": 6929,
+        "Renda": 56,
+        "Nombre total": 22844,
+        "Percentatge": 0.3033
+      },
+      {
+        "Codi_Barri": 52,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Prosperitat",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6480,
+        "Renda": 56,
+        "Nombre total": 22844,
+        "Percentatge": 0.2837
+      },
+      {
+        "Codi_Barri": 52,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Prosperitat",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2663,
+        "Renda": 56,
+        "Nombre total": 22844,
+        "Percentatge": 0.1166
+      },
+      {
+        "Codi_Barri": 52,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Prosperitat",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1866,
+        "Renda": 56,
+        "Nombre total": 22844,
+        "Percentatge": 0.0817
+      },
+      {
+        "Codi_Barri": 53,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Trinitat Nova",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1043,
+        "Renda": 48.2,
+        "Nombre total": 6135,
+        "Percentatge": 0.17
+      },
+      {
+        "Codi_Barri": 53,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Trinitat Nova",
+        "Nivell_academic": "ESO",
+        "Nombre": 2123,
+        "Renda": 48.2,
+        "Nombre total": 6135,
+        "Percentatge": 0.346
+      },
+      {
+        "Codi_Barri": 53,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Trinitat Nova",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1985,
+        "Renda": 48.2,
+        "Nombre total": 6135,
+        "Percentatge": 0.3236
+      },
+      {
+        "Codi_Barri": 53,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Trinitat Nova",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 458,
+        "Renda": 48.2,
+        "Nombre total": 6135,
+        "Percentatge": 0.0747
+      },
+      {
+        "Codi_Barri": 53,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "la Trinitat Nova",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 526,
+        "Renda": 48.2,
+        "Nombre total": 6135,
+        "Percentatge": 0.0857
+      },
+      {
+        "Codi_Barri": 54,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Torre Baró",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 334,
+        "Renda": 46.5,
+        "Nombre total": 2288,
+        "Percentatge": 0.146
+      },
+      {
+        "Codi_Barri": 54,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Torre Baró",
+        "Nivell_academic": "ESO",
+        "Nombre": 729,
+        "Renda": 46.5,
+        "Nombre total": 2288,
+        "Percentatge": 0.3186
+      },
+      {
+        "Codi_Barri": 54,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Torre Baró",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 843,
+        "Renda": 46.5,
+        "Nombre total": 2288,
+        "Percentatge": 0.3684
+      },
+      {
+        "Codi_Barri": 54,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Torre Baró",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 198,
+        "Renda": 46.5,
+        "Nombre total": 2288,
+        "Percentatge": 0.0865
+      },
+      {
+        "Codi_Barri": 54,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Torre Baró",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 184,
+        "Renda": 46.5,
+        "Nombre total": 2288,
+        "Percentatge": 0.0804
+      },
+      {
+        "Codi_Barri": 55,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Ciutat Meridiana",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1388,
+        "Renda": 38.6,
+        "Nombre total": 8553,
+        "Percentatge": 0.1623
+      },
+      {
+        "Codi_Barri": 55,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Ciutat Meridiana",
+        "Nivell_academic": "ESO",
+        "Nombre": 2860,
+        "Renda": 38.6,
+        "Nombre total": 8553,
+        "Percentatge": 0.3344
+      },
+      {
+        "Codi_Barri": 55,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Ciutat Meridiana",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3216,
+        "Renda": 38.6,
+        "Nombre total": 8553,
+        "Percentatge": 0.376
+      },
+      {
+        "Codi_Barri": 55,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Ciutat Meridiana",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 559,
+        "Renda": 38.6,
+        "Nombre total": 8553,
+        "Percentatge": 0.0654
+      },
+      {
+        "Codi_Barri": 55,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Ciutat Meridiana",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 530,
+        "Renda": 38.6,
+        "Nombre total": 8553,
+        "Percentatge": 0.062
+      },
+      {
+        "Codi_Barri": 56,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vallbona",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 141,
+        "Renda": 40.9,
+        "Nombre total": 1105,
+        "Percentatge": 0.1276
+      },
+      {
+        "Codi_Barri": 56,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vallbona",
+        "Nivell_academic": "ESO",
+        "Nombre": 377,
+        "Renda": 40.9,
+        "Nombre total": 1105,
+        "Percentatge": 0.3412
+      },
+      {
+        "Codi_Barri": 56,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vallbona",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 405,
+        "Renda": 40.9,
+        "Nombre total": 1105,
+        "Percentatge": 0.3665
+      },
+      {
+        "Codi_Barri": 56,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vallbona",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 95,
+        "Renda": 40.9,
+        "Nombre total": 1105,
+        "Percentatge": 0.086
+      },
+      {
+        "Codi_Barri": 56,
+        "Nom_Districte": "Nou Barris",
+        "Nom_Barri": "Vallbona",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 87,
+        "Renda": 40.9,
+        "Nombre total": 1105,
+        "Percentatge": 0.0787
+      },
+      {
+        "Codi_Barri": 57,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Trinitat Vella",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1487,
+        "Renda": 47.1,
+        "Nombre total": 8260,
+        "Percentatge": 0.18
+      },
+      {
+        "Codi_Barri": 57,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Trinitat Vella",
+        "Nivell_academic": "ESO",
+        "Nombre": 2637,
+        "Renda": 47.1,
+        "Nombre total": 8260,
+        "Percentatge": 0.3192
+      },
+      {
+        "Codi_Barri": 57,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Trinitat Vella",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2848,
+        "Renda": 47.1,
+        "Nombre total": 8260,
+        "Percentatge": 0.3448
+      },
+      {
+        "Codi_Barri": 57,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Trinitat Vella",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 774,
+        "Renda": 47.1,
+        "Nombre total": 8260,
+        "Percentatge": 0.0937
+      },
+      {
+        "Codi_Barri": 57,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Trinitat Vella",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 514,
+        "Renda": 47.1,
+        "Nombre total": 8260,
+        "Percentatge": 0.0622
+      },
+      {
+        "Codi_Barri": 58,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Baró de Viver",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 305,
+        "Renda": 68.9,
+        "Nombre total": 2076,
+        "Percentatge": 0.1469
+      },
+      {
+        "Codi_Barri": 58,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Baró de Viver",
+        "Nivell_academic": "ESO",
+        "Nombre": 759,
+        "Renda": 68.9,
+        "Nombre total": 2076,
+        "Percentatge": 0.3656
+      },
+      {
+        "Codi_Barri": 58,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Baró de Viver",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 738,
+        "Renda": 68.9,
+        "Nombre total": 2076,
+        "Percentatge": 0.3555
+      },
+      {
+        "Codi_Barri": 58,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Baró de Viver",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 121,
+        "Renda": 68.9,
+        "Nombre total": 2076,
+        "Percentatge": 0.0583
+      },
+      {
+        "Codi_Barri": 58,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Baró de Viver",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 153,
+        "Renda": 68.9,
+        "Nombre total": 2076,
+        "Percentatge": 0.0737
+      },
+      {
+        "Codi_Barri": 59,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Bon Pastor",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2076,
+        "Renda": 65.1,
+        "Nombre total": 10220,
+        "Percentatge": 0.2031
+      },
+      {
+        "Codi_Barri": 59,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Bon Pastor",
+        "Nivell_academic": "ESO",
+        "Nombre": 3245,
+        "Renda": 65.1,
+        "Nombre total": 10220,
+        "Percentatge": 0.3175
+      },
+      {
+        "Codi_Barri": 59,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Bon Pastor",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2985,
+        "Renda": 65.1,
+        "Nombre total": 10220,
+        "Percentatge": 0.2921
+      },
+      {
+        "Codi_Barri": 59,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Bon Pastor",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 1307,
+        "Renda": 65.1,
+        "Nombre total": 10220,
+        "Percentatge": 0.1279
+      },
+      {
+        "Codi_Barri": 59,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Bon Pastor",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 607,
+        "Renda": 65.1,
+        "Nombre total": 10220,
+        "Percentatge": 0.0594
+      },
+      {
+        "Codi_Barri": 60,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Sant Andreu",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 13528,
+        "Renda": 77.7,
+        "Nombre total": 48995,
+        "Percentatge": 0.2761
+      },
+      {
+        "Codi_Barri": 60,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Sant Andreu",
+        "Nivell_academic": "ESO",
+        "Nombre": 12180,
+        "Renda": 77.7,
+        "Nombre total": 48995,
+        "Percentatge": 0.2486
+      },
+      {
+        "Codi_Barri": 60,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Sant Andreu",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 9439,
+        "Renda": 77.7,
+        "Nombre total": 48995,
+        "Percentatge": 0.1927
+      },
+      {
+        "Codi_Barri": 60,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Sant Andreu",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 11784,
+        "Renda": 77.7,
+        "Nombre total": 48995,
+        "Percentatge": 0.2405
+      },
+      {
+        "Codi_Barri": 60,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Sant Andreu",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 2064,
+        "Renda": 77.7,
+        "Nombre total": 48995,
+        "Percentatge": 0.0421
+      },
+      {
+        "Codi_Barri": 61,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Sagrera",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6872,
+        "Renda": 77.1,
+        "Nombre total": 25340,
+        "Percentatge": 0.2712
+      },
+      {
+        "Codi_Barri": 61,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Sagrera",
+        "Nivell_academic": "ESO",
+        "Nombre": 6474,
+        "Renda": 77.1,
+        "Nombre total": 25340,
+        "Percentatge": 0.2555
+      },
+      {
+        "Codi_Barri": 61,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Sagrera",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5068,
+        "Renda": 77.1,
+        "Nombre total": 25340,
+        "Percentatge": 0.2
+      },
+      {
+        "Codi_Barri": 61,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Sagrera",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 5845,
+        "Renda": 77.1,
+        "Nombre total": 25340,
+        "Percentatge": 0.2307
+      },
+      {
+        "Codi_Barri": 61,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "la Sagrera",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1081,
+        "Renda": 77.1,
+        "Nombre total": 25340,
+        "Percentatge": 0.0427
+      },
+      {
+        "Codi_Barri": 62,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Congrés i els Indians",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3386,
+        "Renda": 75.1,
+        "Nombre total": 12249,
+        "Percentatge": 0.2764
+      },
+      {
+        "Codi_Barri": 62,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Congrés i els Indians",
+        "Nivell_academic": "ESO",
+        "Nombre": 3006,
+        "Renda": 75.1,
+        "Nombre total": 12249,
+        "Percentatge": 0.2454
+      },
+      {
+        "Codi_Barri": 62,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Congrés i els Indians",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2265,
+        "Renda": 75.1,
+        "Nombre total": 12249,
+        "Percentatge": 0.1849
+      },
+      {
+        "Codi_Barri": 62,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Congrés i els Indians",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2953,
+        "Renda": 75.1,
+        "Nombre total": 12249,
+        "Percentatge": 0.2411
+      },
+      {
+        "Codi_Barri": 62,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "el Congrés i els Indians",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 639,
+        "Renda": 75.1,
+        "Nombre total": 12249,
+        "Percentatge": 0.0522
+      },
+      {
+        "Codi_Barri": 63,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Navas",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5404,
+        "Renda": 81.6,
+        "Nombre total": 19373,
+        "Percentatge": 0.2789
+      },
+      {
+        "Codi_Barri": 63,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Navas",
+        "Nivell_academic": "ESO",
+        "Nombre": 4731,
+        "Renda": 81.6,
+        "Nombre total": 19373,
+        "Percentatge": 0.2442
+      },
+      {
+        "Codi_Barri": 63,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Navas",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3603,
+        "Renda": 81.6,
+        "Nombre total": 19373,
+        "Percentatge": 0.186
+      },
+      {
+        "Codi_Barri": 63,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Navas",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4840,
+        "Renda": 81.6,
+        "Nombre total": 19373,
+        "Percentatge": 0.2498
+      },
+      {
+        "Codi_Barri": 63,
+        "Nom_Districte": "Sant Andreu",
+        "Nom_Barri": "Navas",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 795,
+        "Renda": 81.6,
+        "Nombre total": 19373,
+        "Percentatge": 0.041
+      },
+      {
+        "Codi_Barri": 64,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Camp de l'Arpa del Clot",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 9072,
+        "Renda": 81.7,
+        "Nombre total": 33928,
+        "Percentatge": 0.2674
+      },
+      {
+        "Codi_Barri": 64,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Camp de l'Arpa del Clot",
+        "Nivell_academic": "ESO",
+        "Nombre": 7666,
+        "Renda": 81.7,
+        "Nombre total": 33928,
+        "Percentatge": 0.2259
+      },
+      {
+        "Codi_Barri": 64,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Camp de l'Arpa del Clot",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5883,
+        "Renda": 81.7,
+        "Nombre total": 33928,
+        "Percentatge": 0.1734
+      },
+      {
+        "Codi_Barri": 64,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Camp de l'Arpa del Clot",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 9997,
+        "Renda": 81.7,
+        "Nombre total": 33928,
+        "Percentatge": 0.2947
+      },
+      {
+        "Codi_Barri": 64,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Camp de l'Arpa del Clot",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1310,
+        "Renda": 81.7,
+        "Nombre total": 33928,
+        "Percentatge": 0.0386
+      },
+      {
+        "Codi_Barri": 65,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Clot",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 6333,
+        "Renda": 83.6,
+        "Nombre total": 23439,
+        "Percentatge": 0.2702
+      },
+      {
+        "Codi_Barri": 65,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Clot",
+        "Nivell_academic": "ESO",
+        "Nombre": 5778,
+        "Renda": 83.6,
+        "Nombre total": 23439,
+        "Percentatge": 0.2465
+      },
+      {
+        "Codi_Barri": 65,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Clot",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4259,
+        "Renda": 83.6,
+        "Nombre total": 23439,
+        "Percentatge": 0.1817
+      },
+      {
+        "Codi_Barri": 65,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Clot",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 6115,
+        "Renda": 83.6,
+        "Nombre total": 23439,
+        "Percentatge": 0.2609
+      },
+      {
+        "Codi_Barri": 65,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Clot",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 954,
+        "Renda": 83.6,
+        "Nombre total": 23439,
+        "Percentatge": 0.0407
+      },
+      {
+        "Codi_Barri": 66,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Parc i la Llacuna del Poblenou",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3450,
+        "Renda": 100.4,
+        "Nombre total": 13214,
+        "Percentatge": 0.2611
+      },
+      {
+        "Codi_Barri": 66,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Parc i la Llacuna del Poblenou",
+        "Nivell_academic": "ESO",
+        "Nombre": 2668,
+        "Renda": 100.4,
+        "Nombre total": 13214,
+        "Percentatge": 0.2019
+      },
+      {
+        "Codi_Barri": 66,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Parc i la Llacuna del Poblenou",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 2112,
+        "Renda": 100.4,
+        "Nombre total": 13214,
+        "Percentatge": 0.1598
+      },
+      {
+        "Codi_Barri": 66,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Parc i la Llacuna del Poblenou",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4530,
+        "Renda": 100.4,
+        "Nombre total": 13214,
+        "Percentatge": 0.3428
+      },
+      {
+        "Codi_Barri": 66,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Parc i la Llacuna del Poblenou",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 454,
+        "Renda": 100.4,
+        "Nombre total": 13214,
+        "Percentatge": 0.0344
+      },
+      {
+        "Codi_Barri": 67,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Vila Olímpica del Poblenou",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 1941,
+        "Renda": 164.2,
+        "Nombre total": 7792,
+        "Percentatge": 0.2491
+      },
+      {
+        "Codi_Barri": 67,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Vila Olímpica del Poblenou",
+        "Nivell_academic": "ESO",
+        "Nombre": 985,
+        "Renda": 164.2,
+        "Nombre total": 7792,
+        "Percentatge": 0.1264
+      },
+      {
+        "Codi_Barri": 67,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Vila Olímpica del Poblenou",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 506,
+        "Renda": 164.2,
+        "Nombre total": 7792,
+        "Percentatge": 0.0649
+      },
+      {
+        "Codi_Barri": 67,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Vila Olímpica del Poblenou",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4107,
+        "Renda": 164.2,
+        "Nombre total": 7792,
+        "Percentatge": 0.5271
+      },
+      {
+        "Codi_Barri": 67,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Vila Olímpica del Poblenou",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 253,
+        "Renda": 164.2,
+        "Nombre total": 7792,
+        "Percentatge": 0.0325
+      },
+      {
+        "Codi_Barri": 68,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Poblenou",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 7238,
+        "Renda": 99.9,
+        "Nombre total": 28185,
+        "Percentatge": 0.2568
+      },
+      {
+        "Codi_Barri": 68,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Poblenou",
+        "Nivell_academic": "ESO",
+        "Nombre": 5962,
+        "Renda": 99.9,
+        "Nombre total": 28185,
+        "Percentatge": 0.2115
+      },
+      {
+        "Codi_Barri": 68,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Poblenou",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 4690,
+        "Renda": 99.9,
+        "Nombre total": 28185,
+        "Percentatge": 0.1664
+      },
+      {
+        "Codi_Barri": 68,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Poblenou",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 9122,
+        "Renda": 99.9,
+        "Nombre total": 28185,
+        "Percentatge": 0.3236
+      },
+      {
+        "Codi_Barri": 68,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Poblenou",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1173,
+        "Renda": 99.9,
+        "Nombre total": 28185,
+        "Percentatge": 0.0416
+      },
+      {
+        "Codi_Barri": 69,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Diagonal Mar i el Front Marítim del Poblenou",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 2700,
+        "Renda": 150.1,
+        "Nombre total": 10901,
+        "Percentatge": 0.2477
+      },
+      {
+        "Codi_Barri": 69,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Diagonal Mar i el Front Marítim del Poblenou",
+        "Nivell_academic": "ESO",
+        "Nombre": 1955,
+        "Renda": 150.1,
+        "Nombre total": 10901,
+        "Percentatge": 0.1793
+      },
+      {
+        "Codi_Barri": 69,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Diagonal Mar i el Front Marítim del Poblenou",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 1428,
+        "Renda": 150.1,
+        "Nombre total": 10901,
+        "Percentatge": 0.131
+      },
+      {
+        "Codi_Barri": 69,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Diagonal Mar i el Front Marítim del Poblenou",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4363,
+        "Renda": 150.1,
+        "Nombre total": 10901,
+        "Percentatge": 0.4002
+      },
+      {
+        "Codi_Barri": 69,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Diagonal Mar i el Front Marítim del Poblenou",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 455,
+        "Renda": 150.1,
+        "Nombre total": 10901,
+        "Percentatge": 0.0417
+      },
+      {
+        "Codi_Barri": 70,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Besòs i el Maresme",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 3652,
+        "Renda": 60.4,
+        "Nombre total": 19389,
+        "Percentatge": 0.1884
+      },
+      {
+        "Codi_Barri": 70,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Besòs i el Maresme",
+        "Nivell_academic": "ESO",
+        "Nombre": 5792,
+        "Renda": 60.4,
+        "Nombre total": 19389,
+        "Percentatge": 0.2987
+      },
+      {
+        "Codi_Barri": 70,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Besòs i el Maresme",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6297,
+        "Renda": 60.4,
+        "Nombre total": 19389,
+        "Percentatge": 0.3248
+      },
+      {
+        "Codi_Barri": 70,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Besòs i el Maresme",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 2157,
+        "Renda": 60.4,
+        "Nombre total": 19389,
+        "Percentatge": 0.1112
+      },
+      {
+        "Codi_Barri": 70,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "el Besòs i el Maresme",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1491,
+        "Renda": 60.4,
+        "Nombre total": 19389,
+        "Percentatge": 0.0769
+      },
+      {
+        "Codi_Barri": 71,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Provençals del Poblenou",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 4490,
+        "Renda": 102.3,
+        "Nombre total": 17576,
+        "Percentatge": 0.2555
+      },
+      {
+        "Codi_Barri": 71,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Provençals del Poblenou",
+        "Nivell_academic": "ESO",
+        "Nombre": 4538,
+        "Renda": 102.3,
+        "Nombre total": 17576,
+        "Percentatge": 0.2582
+      },
+      {
+        "Codi_Barri": 71,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Provençals del Poblenou",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 3617,
+        "Renda": 102.3,
+        "Nombre total": 17576,
+        "Percentatge": 0.2058
+      },
+      {
+        "Codi_Barri": 71,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Provençals del Poblenou",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4088,
+        "Renda": 102.3,
+        "Nombre total": 17576,
+        "Percentatge": 0.2326
+      },
+      {
+        "Codi_Barri": 71,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Provençals del Poblenou",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 843,
+        "Renda": 102.3,
+        "Nombre total": 17576,
+        "Percentatge": 0.048
+      },
+      {
+        "Codi_Barri": 72,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Sant Martí de Provençals",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5655,
+        "Renda": 67.4,
+        "Nombre total": 22801,
+        "Percentatge": 0.248
+      },
+      {
+        "Codi_Barri": 72,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Sant Martí de Provençals",
+        "Nivell_academic": "ESO",
+        "Nombre": 6193,
+        "Renda": 67.4,
+        "Nombre total": 22801,
+        "Percentatge": 0.2716
+      },
+      {
+        "Codi_Barri": 72,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Sant Martí de Provençals",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 5385,
+        "Renda": 67.4,
+        "Nombre total": 22801,
+        "Percentatge": 0.2362
+      },
+      {
+        "Codi_Barri": 72,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Sant Martí de Provençals",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 4275,
+        "Renda": 67.4,
+        "Nombre total": 22801,
+        "Percentatge": 0.1875
+      },
+      {
+        "Codi_Barri": 72,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "Sant Martí de Provençals",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1293,
+        "Renda": 67.4,
+        "Nombre total": 22801,
+        "Percentatge": 0.0567
+      },
+      {
+        "Codi_Barri": 73,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Verneda i la Pau",
+        "Nivell_academic": "Batxillerat / CFGM",
+        "Nombre": 5728,
+        "Renda": 57,
+        "Nombre total": 25007,
+        "Percentatge": 0.2291
+      },
+      {
+        "Codi_Barri": 73,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Verneda i la Pau",
+        "Nivell_academic": "ESO",
+        "Nombre": 7393,
+        "Renda": 57,
+        "Nombre total": 25007,
+        "Percentatge": 0.2956
+      },
+      {
+        "Codi_Barri": 73,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Verneda i la Pau",
+        "Nivell_academic": "Estudis primaris",
+        "Nombre": 6856,
+        "Renda": 57,
+        "Nombre total": 25007,
+        "Percentatge": 0.2742
+      },
+      {
+        "Codi_Barri": 73,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Verneda i la Pau",
+        "Nivell_academic": "Estudis universitaris / CFGS",
+        "Nombre": 3306,
+        "Renda": 57,
+        "Nombre total": 25007,
+        "Percentatge": 0.1322
+      },
+      {
+        "Codi_Barri": 73,
+        "Nom_Districte": "Sant Martí",
+        "Nom_Barri": "la Verneda i la Pau",
+        "Nivell_academic": "Sense estudis",
+        "Nombre": 1724,
+        "Renda": 57,
+        "Nombre total": 25007,
+        "Percentatge": 0.0689
+      }
+    ]
+  }
+}
