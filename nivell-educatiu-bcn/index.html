@@ -18,10 +18,10 @@
 
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
+    <script src="/script.js" defer></script>
     
     <!-- import the font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -56,9 +56,9 @@
     <div>
         → <b>ESO:</b> Educació Secundària Obligatòria
       <br />
-        → <b>CFGM:</b> Cicle Formatiu Grau Mitjà
+        → <b>CFGM:</b> Cicle Formatiu de Grau Mitjà
       <br />
-        → <b>CFGS:</b> Cicle Formatiu Grau Superior
+        → <b>CFGS:</b> Cicle Formatiu de Grau Superior
       </div>
     
     <hr />
@@ -68,22 +68,22 @@
     <h2> Percentatges de població +16 segons estudis superats </h2>
     <section class="row">
       <div>
-        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_primaria%20(2).svg?v=1607801821238"><br />
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_primaria%20(3).svg?v=1607962948492"><br />
         <span class="c1 cb">96%</span>
         <p class="c"> Estudis primaris </p>
       </div>
       <div>
-        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_eso.svg?v=1603209543921"><br />
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_eso%20(1).svg?v=1607962945722"><br />
         <span class="c2 cb">80%</span>
         <p class="c"> ESO </p>
       </div>
       <div>
-        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_bachi.svg?v=1603632292776"><br >
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_bachi%20(1).svg?v=1607962945723"><br >
         <span class="c3 cb">58%</span>
         <p class="c"> Batxillerat / CFGM </p>
       </div>
       <div>
-        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_uni.svg?v=1603209546172"><br />
+        <img width="180" src="https://cdn.glitch.com/8d6e3a35-83bc-4f34-8cad-803cbb9155c5%2Fwaffle_uni%20(1).svg?v=1607962946596"><br />
         <span class="c4 cb">33%</span>
         <p class="c"> Estudis Universitaris /CFGS </p>
       </div>
@@ -96,15 +96,14 @@
     
     
     <h2> Evolució del % de persones +16 segons nivell d'estudis </h2>
-      <p class="expl">
-        Fes clic a sobre de cada districte per veure la seva evolució
-      </p>
+      
     <section class="two-cols-60-40">
       <div id="plot1">
         []
       </div>
       <div>
         <ul class="button-list">
+          <li> <b>Nom Districte</b> </li>
           <li onclick="changeEvoPlot(0)">Ciutat Vella</li>
           <li onclick="changeEvoPlot(1)">L'Eixample</li>
           <li onclick="changeEvoPlot(2)">Gràcia</li>
@@ -116,8 +115,14 @@
           <li onclick="changeEvoPlot(8)">Sants Montjuïc</li>
           <li onclick="changeEvoPlot(9)">Sarrià-Sant Gervasi</li>
         </ul>
+        <p class="expl">
+          Fes clic a sobre de cada districte per veure la seva evolució
+        </p>
       </div>
     </section>
+      <div class="obs">
+        En els últims deu anys hi ha hagut un creixement continu en el nombre de persones amb estudis superiors i la quantitat de gent sense els estudis mínims obligatoris ha disminuït.
+      </div><br /><br />
     
     
     
@@ -148,7 +153,7 @@
     
     <h2> Diferències entre sexes per nivell educatiu </h2>
     <p class="expl">
-      De la població a cada categoria, el percentatge de dones. <span style="padding-left: 4px; padding-right: 4px; background-color: #DFCBE3; color:#763283; font-weight: 500"> El color lila indica majoria de dones</span> i <span style="padding-left: 4px; padding-right: 4px; background-color: #C5E7BF; color:#1F7638; font-weight: 500">el color verd indica majoria d'homes.</span> 
+      De la població a cada categoria, el percentatge de dones. El color lila indica <span style="padding-left: 4px; padding-right: 4px; background-color: #DFCBE3; color:#763283; font-weight: 500">majoria de dones</span> i el color verd indica <span style="padding-left: 4px; padding-right: 4px; background-color: #C5E7BF; color:#1F7638; font-weight: 500">majoria d'homes.</span> 
     </p>
     <section class="row">
       <div>
@@ -166,7 +171,8 @@
       <div id="map-sexe-3_legend"></div>
     </section>
     <div class="obs">
-      A Barcelona, hi ha <b>48107</b> dones més que homes amb estudis universitaris o CFGS
+      D'entre les persones amb estudis universitaris o CFGS a Barcelona, el <b>55%</b> són dones
+      <!-- A Barcelona, hi ha <b>48107</b> dones més que homes amb estudis universitaris o CFGS -->
     </div>
     
     

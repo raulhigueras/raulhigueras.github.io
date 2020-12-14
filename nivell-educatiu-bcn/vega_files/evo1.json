@@ -3,8 +3,10 @@
   "config": {
     "legend": {
       "direction": "vertical",
+      "labelFontSize": 12,
       "labelLimit": 400,
-      "orient": "bottom"
+      "orient": "bottom",
+      "titleFontSize": 14
     },
     "view": {
       "continuousHeight": 300,
