@@ -9,6 +9,9 @@ const colors= [
   ['#955196', '#F1E4F1']
 ]
 
+// HACER APARECER EL POPUP AL INICIO
+window.location.href = "#popup1";
+
 
 //
 //  FUNCIÓN MAIN
